@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C16EF171892AFF20019A3C6 /* LiveStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF161892AFF20019A3C6 /* LiveStreamView.m */; };
+		6C16EF1A1892B0040019A3C6 /* PlaylistView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF191892B0040019A3C6 /* PlaylistView.m */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C16EF151892AFF20019A3C6 /* LiveStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveStreamView.h; sourceTree = "<group>"; };
+		6C16EF161892AFF20019A3C6 /* LiveStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveStreamView.m; sourceTree = "<group>"; };
+		6C16EF181892B0040019A3C6 /* PlaylistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistView.h; sourceTree = "<group>"; };
+		6C16EF191892B0040019A3C6 /* PlaylistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistView.m; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -203,6 +209,10 @@
 		EAAC2270188AB518008DBE33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6C16EF151892AFF20019A3C6 /* LiveStreamView.h */,
+				6C16EF161892AFF20019A3C6 /* LiveStreamView.m */,
+				6C16EF181892B0040019A3C6 /* PlaylistView.h */,
+				6C16EF191892B0040019A3C6 /* PlaylistView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,9 +264,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pieter Beulque";
 				TargetAttributes = {
-					EAAC2236188AB20B008DBE33 = {
-						DevelopmentTeam = N2D23V29UK;
-					};
 					EAAC2251188AB20B008DBE33 = {
 						TestTargetID = EAAC2236188AB20B008DBE33;
 					};
@@ -307,8 +314,10 @@
 			files = (
 				EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */,
 				EAAC2271188AB518008DBE33 /* AppDelegate.m in Sources */,
+				6C16EF171892AFF20019A3C6 /* LiveStreamView.m in Sources */,
 				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
 				EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */,
+				6C16EF1A1892B0040019A3C6 /* PlaylistView.m in Sources */,
 				EAAC2247188AB20B008DBE33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +525,7 @@
 				EAAC2265188AB20B008DBE33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAAC2266188AB20B008DBE33 /* Build configuration list for PBXNativeTarget "Klara OveralTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +534,7 @@
 				EAAC2268188AB20B008DBE33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
