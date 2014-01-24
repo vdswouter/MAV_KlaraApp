@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LiveStreamView.h"
 
 @interface LivestreamViewController : UIViewController
 

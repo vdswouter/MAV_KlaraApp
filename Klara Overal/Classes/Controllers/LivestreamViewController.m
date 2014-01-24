@@ -24,8 +24,7 @@
 }
 
 - (void)loadView {
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
-    [self.view setBackgroundColor:[UIColor blueColor]];
+    self.view = [[LiveStreamView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
 
 - (void)viewDidLoad

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaylistView.h"
 
 @interface PlaylistsViewController : UIViewController
 

@@ -24,8 +24,7 @@
 }
 
 - (void)loadView {
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
-    [self.view setBackgroundColor:[UIColor greenColor]];
+    self.view = [[PlaylistView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
 }
 
 - (void)viewDidLoad
