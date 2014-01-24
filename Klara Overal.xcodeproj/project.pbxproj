@@ -12,13 +12,16 @@
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
 		EAAC2245188AB20B008DBE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAAC2243188AB20B008DBE33 /* InfoPlist.strings */; };
 		EAAC2247188AB20B008DBE33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2246188AB20B008DBE33 /* main.m */; };
-		EAAC224B188AB20B008DBE33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC224A188AB20B008DBE33 /* AppDelegate.m */; };
 		EAAC224D188AB20B008DBE33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAC224C188AB20B008DBE33 /* Images.xcassets */; };
 		EAAC2254188AB20B008DBE33 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC2253188AB20B008DBE33 /* XCTest.framework */; };
 		EAAC2255188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC2256188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
 		EAAC225E188AB20B008DBE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAAC225C188AB20B008DBE33 /* InfoPlist.strings */; };
 		EAAC2260188AB20B008DBE33 /* Klara_OveralTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC225F188AB20B008DBE33 /* Klara_OveralTests.m */; };
+		EAAC2271188AB518008DBE33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC226C188AB518008DBE33 /* AppDelegate.m */; };
+		EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2273188AB53E008DBE33 /* AppViewController.m */; };
+		EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2276188AB551008DBE33 /* LivestreamViewController.m */; };
+		EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +43,20 @@
 		EAAC2244188AB20B008DBE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAAC2246188AB20B008DBE33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAAC2248188AB20B008DBE33 /* Klara Overal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Klara Overal-Prefix.pch"; sourceTree = "<group>"; };
-		EAAC2249188AB20B008DBE33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EAAC224A188AB20B008DBE33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EAAC224C188AB20B008DBE33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAAC2252188AB20B008DBE33 /* Klara OveralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Klara OveralTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC2253188AB20B008DBE33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EAAC225B188AB20B008DBE33 /* Klara OveralTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Klara OveralTests-Info.plist"; sourceTree = "<group>"; };
 		EAAC225D188AB20B008DBE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAAC225F188AB20B008DBE33 /* Klara_OveralTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Klara_OveralTests.m; sourceTree = "<group>"; };
+		EAAC226B188AB518008DBE33 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EAAC226C188AB518008DBE33 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAAC2272188AB53E008DBE33 /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
+		EAAC2273188AB53E008DBE33 /* AppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
+		EAAC2275188AB551008DBE33 /* LivestreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivestreamViewController.h; sourceTree = "<group>"; };
+		EAAC2276188AB551008DBE33 /* LivestreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivestreamViewController.m; sourceTree = "<group>"; };
+		EAAC2278188AB561008DBE33 /* PlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsViewController.h; sourceTree = "<group>"; };
+		EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +116,7 @@
 		EAAC2240188AB20B008DBE33 /* Klara Overal */ = {
 			isa = PBXGroup;
 			children = (
-				EAAC2249188AB20B008DBE33 /* AppDelegate.h */,
-				EAAC224A188AB20B008DBE33 /* AppDelegate.m */,
+				EAAC2269188AB518008DBE33 /* Classes */,
 				EAAC224C188AB20B008DBE33 /* Images.xcassets */,
 				EAAC2241188AB20B008DBE33 /* Supporting Files */,
 			);
@@ -142,6 +150,61 @@
 				EAAC225C188AB20B008DBE33 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAAC2269188AB518008DBE33 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC226A188AB518008DBE33 /* AppDelegate */,
+				EAAC226D188AB518008DBE33 /* Controllers */,
+				EAAC226E188AB518008DBE33 /* Helpers */,
+				EAAC226F188AB518008DBE33 /* Models */,
+				EAAC2270188AB518008DBE33 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EAAC226A188AB518008DBE33 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC226B188AB518008DBE33 /* AppDelegate.h */,
+				EAAC226C188AB518008DBE33 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		EAAC226D188AB518008DBE33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC2272188AB53E008DBE33 /* AppViewController.h */,
+				EAAC2273188AB53E008DBE33 /* AppViewController.m */,
+				EAAC2275188AB551008DBE33 /* LivestreamViewController.h */,
+				EAAC2276188AB551008DBE33 /* LivestreamViewController.m */,
+				EAAC2278188AB561008DBE33 /* PlaylistsViewController.h */,
+				EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EAAC226E188AB518008DBE33 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAAC226F188AB518008DBE33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EAAC2270188AB518008DBE33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +254,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pieter Beulque";
 				TargetAttributes = {
+					EAAC2236188AB20B008DBE33 = {
+						DevelopmentTeam = N2D23V29UK;
+					};
 					EAAC2251188AB20B008DBE33 = {
 						TestTargetID = EAAC2236188AB20B008DBE33;
 					};
@@ -239,7 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAAC224B188AB20B008DBE33 /* AppDelegate.m in Sources */,
+				EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */,
+				EAAC2271188AB518008DBE33 /* AppDelegate.m in Sources */,
+				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
+				EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */,
 				EAAC2247188AB20B008DBE33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Klara Overal/Klara Overal-Prefix.pch";
 				INFOPLIST_FILE = "Klara Overal/Klara Overal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -372,10 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Klara Overal/Klara Overal-Prefix.pch";
 				INFOPLIST_FILE = "Klara Overal/Klara Overal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
