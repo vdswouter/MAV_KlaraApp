@@ -21,26 +21,44 @@
         // Custom initialization
         self.currentAudioQuality = @"MID";
         
-        self.klaraStreamURLs = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://mp3.streampower.be/klara-high.mp3",@"hoog",@"http://mp3.streampower.be/klara-mid.mp3",@"MID",@"http://mp3.streampower.be/klara-low.mp3",@"LOW",nil];
+        self.klaraStreamURLs = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://mp3.streampower.be/stubru-high.mp3",@"hoog",@"http://mp3.streampower.be/klara-mid.mp3",@"MID",@"http://mp3.streampower.be/stubru-low.mp3",@"LOW",nil];
 
         self.streamer = [[STKAudioPlayer alloc] init];
-//        self.streamer.delegate = self;
     }
     return self;
 }
 
 - (void)loadView {
     self.view = [[LiveStreamView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.view.btnPlay addTarget:self action:@selector(StartStream:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view.btnPause addTarget:self action:@selector(StopStream:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.btnPlay addTarget:self action:@selector(startStream:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.btnPause addTarget:self action:@selector(stopStream:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.qualityPicker = [[QualityPicker alloc] initWithFrame:CGRectMake(17, 450, 285, 34)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(qualityChangedHandler:) name:@"QUALITY_CHANGED" object:self.qualityPicker];
+    [self.view addSubview:self.qualityPicker];
 }
 
--(void)StartStream:(id)sender{
+-(void)qualityChangedHandler:(NSNotification *)sender{
+    [self.streamer stop];
+    self.currentAudioQuality = [[sender userInfo] objectForKey:@"quality"];
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
 }
 
--(void)StopStream:(id)sender{
+-(void)startStream:(id)sender{
+    [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.qualityPicker.frame = CGRectMake(17, 386, 285, 34);
+        self.qualityPicker.btnMid.titleLabel.textColor = [UIColor whiteColor];
+        self.qualityPicker.btnMid.backgroundColor = [UIColor blackColor];
+        self.qualityPicker.btnMid.userInteractionEnabled = false;
+    }];
+}
+
+-(void)stopStream:(id)sender{
     [self.streamer stop];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.qualityPicker.frame = CGRectMake(17, 450, 285, 34);
+    }];
 }
 
 - (void)viewDidLoad

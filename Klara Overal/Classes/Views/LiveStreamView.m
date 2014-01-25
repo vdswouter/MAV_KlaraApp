@@ -56,12 +56,12 @@
         self.lblDescription.font = [UIFont fontWithName:@"Calibre-Light" size:11];
         [self addSubview:self.lblDescription];
         
-        self.btnPlay = [[UIButton alloc] initWithFrame:CGRectMake(30, 370, 100, 40)];
+        self.btnPlay = [[UIButton alloc] initWithFrame:CGRectMake(30, 350, 100, 40)];
         self.btnPlay.backgroundColor = [UIColor greenColor];
         [self.btnPlay setTitle:@"play" forState:UIControlStateNormal];
         [self addSubview:self.btnPlay];
         
-        self.btnPause = [[UIButton alloc] initWithFrame:CGRectMake(200, 370, 100, 40)];
+        self.btnPause = [[UIButton alloc] initWithFrame:CGRectMake(200, 350, 100, 40)];
         self.btnPause.backgroundColor = [UIColor redColor];
         [self.btnPause setTitle:@"pause" forState:UIControlStateNormal];
         [self addSubview:self.btnPause];

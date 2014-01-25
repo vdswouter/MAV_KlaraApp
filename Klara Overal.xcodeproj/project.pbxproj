@@ -36,6 +36,8 @@
 		6CA72B331894465100FECB90 /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B211894465100FECB90 /* STKDataSourceWrapper.m */; };
 		6CA72B341894465100FECB90 /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B231894465100FECB90 /* STKHTTPDataSource.m */; };
 		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
+		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
+		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -132,6 +134,9 @@
 		6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKLocalFileDataSource.m; sourceTree = "<group>"; };
 		6CA72B261894465100FECB90 /* StreamingKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-Prefix.pch"; sourceTree = "<group>"; };
 		6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = StreamingKit.xcodeproj; sourceTree = "<group>"; };
+		6CA72B3F18945E1C00FECB90 /* QualityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPicker.h; sourceTree = "<group>"; };
+		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
+		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */,
 				6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */,
 				6C16EF221893D9820019A3C6 /* SystemConfiguration.framework in Frameworks */,
 				EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */,
@@ -270,6 +276,7 @@
 		EAAC2239188AB20B008DBE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CA72B42189462F500FECB90 /* QuartzCore.framework */,
 				6CA72B161894465100FECB90 /* StreamingKit */,
 				6CA72B141894353000FECB90 /* AVFoundation.framework */,
 				6C16EF231893DA500019A3C6 /* AFNetworking */,
@@ -389,6 +396,8 @@
 				6C16EF191892B0040019A3C6 /* PlaylistView.m */,
 				6C16EF1B1892B08C0019A3C6 /* ViewToggleButton.h */,
 				6C16EF1C1892B08C0019A3C6 /* ViewToggleButton.m */,
+				6CA72B3F18945E1C00FECB90 /* QualityPicker.h */,
+				6CA72B4018945E1C00FECB90 /* QualityPicker.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 				6C16EF3F1893DA500019A3C6 /* AFURLSessionManager.m in Sources */,
 				6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */,
 				6C16EF421893DC350019A3C6 /* Reachability.m in Sources */,
+				6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */,
 				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
 				6CA72B341894465100FECB90 /* STKHTTPDataSource.m in Sources */,
 				6C16EF381893DA500019A3C6 /* AFHTTPRequestOperationManager.m in Sources */,

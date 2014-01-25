@@ -23,11 +23,6 @@
     _screenHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
 
     if (self) {
-        self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
-        self.playlistsVC = [[PlaylistsViewController alloc] initWithNibName:nil bundle:nil];
-        
-        self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight-44, 320, 44)];
-        [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
         
         [self loadData];
     }
@@ -44,10 +39,12 @@
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         id nowNode = [[[responseObject objectForKey:@"onairs"] objectAtIndex:0] objectForKey:@"now"];
         self.huidigProgrammaData = [[ProgrammaModel alloc] init];
-        self.huidigProgrammaData.title = [nowNode objectForKey:@"title"];
-        self.huidigProgrammaData.info = [nowNode objectForKey:@"shortDescription"];
-        self.huidigProgrammaData.imgURL = [nowNode objectForKey:@"pictureUrl"];
-        self.huidigProgrammaData.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
+        if ([nowNode count] > 0) {
+            self.huidigProgrammaData.title = [nowNode objectForKey:@"title"];
+            self.huidigProgrammaData.info = [nowNode objectForKey:@"shortDescription"];
+            self.huidigProgrammaData.imgURL = [nowNode objectForKey:@"pictureUrl"];
+            self.huidigProgrammaData.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
+        }
         self.livestreamVC.view.programData = self.huidigProgrammaData;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -57,6 +54,12 @@
 }
 
 - (void)loadView {
+    self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
+    self.playlistsVC = [[PlaylistsViewController alloc] initWithNibName:nil bundle:nil];
+    
+    self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight-44, 320, 44)];
+    [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
+    
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, (_screenHeight*2)-44)];
     [self.view setBackgroundColor:[UIColor redColor]];
     

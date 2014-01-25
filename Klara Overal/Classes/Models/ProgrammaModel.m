@@ -10,4 +10,14 @@
 
 @implementation ProgrammaModel
 
+-(id)init{
+    self.title = @"Geen programma info...";
+    self.imgURL = nil;
+    self.presenter = @"niemand";
+    self.info = @" ";
+    
+    return self;
+}
+
+
 @end
