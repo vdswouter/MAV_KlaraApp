@@ -44,6 +44,8 @@
     
     
     self.currentVC = self.livestreamVC;
+    
+    [Util networkConnectionAvailable];
 }
 
 - (void)btnPressedHandler:(id)sender{

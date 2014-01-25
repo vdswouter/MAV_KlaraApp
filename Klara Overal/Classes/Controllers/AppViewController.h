@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Util.h"
+
 #import "LivestreamViewController.h"
 #import "PlaylistsViewController.h"
 #import "ViewToggleButton.h"
