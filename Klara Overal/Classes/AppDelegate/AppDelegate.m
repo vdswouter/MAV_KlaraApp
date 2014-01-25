@@ -19,7 +19,9 @@
     self.app = [[AppViewController alloc] initWithNibName:nil bundle:nil];
     [self.window setRootViewController:self.app];
     
-    [self enumerateFonts];
+//    [self enumerateFonts];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     return YES;
 }

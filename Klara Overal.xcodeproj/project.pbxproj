@@ -28,6 +28,14 @@
 		6C16EF4C189405160019A3C6 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF48189405160019A3C6 /* Calibre-Light.otf */; };
 		6C16EF4D189405160019A3C6 /* MetaSerifPro-Medi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */; };
 		6C16EF5618940D220019A3C6 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF5518940D220019A3C6 /* img */; };
+		6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B141894353000FECB90 /* AVFoundation.framework */; };
+		6CA72B2F1894465100FECB90 /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B191894465100FECB90 /* STKAudioPlayer.m */; };
+		6CA72B301894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B1B1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m */; };
+		6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B1D1894465100FECB90 /* STKCoreFoundationDataSource.m */; };
+		6CA72B321894465100FECB90 /* STKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B1F1894465100FECB90 /* STKDataSource.m */; };
+		6CA72B331894465100FECB90 /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B211894465100FECB90 /* STKDataSourceWrapper.m */; };
+		6CA72B341894465100FECB90 /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B231894465100FECB90 /* STKHTTPDataSource.m */; };
+		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -46,6 +54,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6CA72B3B1894465100FECB90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1E7C4C8188D57F50010896F;
+			remoteInfo = StreamingKit;
+		};
+		6CA72B3D1894465100FECB90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1E7C4D8188D57F60010896F;
+			remoteInfo = StreamingKitTests;
+		};
 		EAAC2257188AB20B008DBE33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAAC222F188AB20B008DBE33 /* Project object */;
@@ -93,6 +115,23 @@
 		6C16EF48189405160019A3C6 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Calibre-Light.otf"; path = "../Calibre-Light.otf"; sourceTree = "<group>"; };
 		6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MetaSerifPro-Medi.otf"; path = "../MetaSerifPro-Medi.otf"; sourceTree = "<group>"; };
 		6C16EF5518940D220019A3C6 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		6CA72B141894353000FECB90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6CA72B181894465100FECB90 /* STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAudioPlayer.h; sourceTree = "<group>"; };
+		6CA72B191894465100FECB90 /* STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAudioPlayer.m; sourceTree = "<group>"; };
+		6CA72B1A1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAutoRecoveringHTTPDataSource.h; sourceTree = "<group>"; };
+		6CA72B1B1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAutoRecoveringHTTPDataSource.m; sourceTree = "<group>"; };
+		6CA72B1C1894465100FECB90 /* STKCoreFoundationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKCoreFoundationDataSource.h; sourceTree = "<group>"; };
+		6CA72B1D1894465100FECB90 /* STKCoreFoundationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKCoreFoundationDataSource.m; sourceTree = "<group>"; };
+		6CA72B1E1894465100FECB90 /* STKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSource.h; sourceTree = "<group>"; };
+		6CA72B1F1894465100FECB90 /* STKDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSource.m; sourceTree = "<group>"; };
+		6CA72B201894465100FECB90 /* STKDataSourceWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSourceWrapper.h; sourceTree = "<group>"; };
+		6CA72B211894465100FECB90 /* STKDataSourceWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSourceWrapper.m; sourceTree = "<group>"; };
+		6CA72B221894465100FECB90 /* STKHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKHTTPDataSource.h; sourceTree = "<group>"; };
+		6CA72B231894465100FECB90 /* STKHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKHTTPDataSource.m; sourceTree = "<group>"; };
+		6CA72B241894465100FECB90 /* STKLocalFileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKLocalFileDataSource.h; sourceTree = "<group>"; };
+		6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKLocalFileDataSource.m; sourceTree = "<group>"; };
+		6CA72B261894465100FECB90 /* StreamingKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-Prefix.pch"; sourceTree = "<group>"; };
+		6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = StreamingKit.xcodeproj; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */,
 				6C16EF221893D9820019A3C6 /* SystemConfiguration.framework in Frameworks */,
 				EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */,
 				EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */,
@@ -168,6 +208,46 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		6CA72B161894465100FECB90 /* StreamingKit */ = {
+			isa = PBXGroup;
+			children = (
+				6CA72B171894465100FECB90 /* StreamingKit */,
+				6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */,
+			);
+			path = StreamingKit;
+			sourceTree = "<group>";
+		};
+		6CA72B171894465100FECB90 /* StreamingKit */ = {
+			isa = PBXGroup;
+			children = (
+				6CA72B181894465100FECB90 /* STKAudioPlayer.h */,
+				6CA72B191894465100FECB90 /* STKAudioPlayer.m */,
+				6CA72B1A1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.h */,
+				6CA72B1B1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m */,
+				6CA72B1C1894465100FECB90 /* STKCoreFoundationDataSource.h */,
+				6CA72B1D1894465100FECB90 /* STKCoreFoundationDataSource.m */,
+				6CA72B1E1894465100FECB90 /* STKDataSource.h */,
+				6CA72B1F1894465100FECB90 /* STKDataSource.m */,
+				6CA72B201894465100FECB90 /* STKDataSourceWrapper.h */,
+				6CA72B211894465100FECB90 /* STKDataSourceWrapper.m */,
+				6CA72B221894465100FECB90 /* STKHTTPDataSource.h */,
+				6CA72B231894465100FECB90 /* STKHTTPDataSource.m */,
+				6CA72B241894465100FECB90 /* STKLocalFileDataSource.h */,
+				6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */,
+				6CA72B261894465100FECB90 /* StreamingKit-Prefix.pch */,
+			);
+			path = StreamingKit;
+			sourceTree = "<group>";
+		};
+		6CA72B281894465100FECB90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CA72B3C1894465100FECB90 /* libStreamingKit.a */,
+				6CA72B3E1894465100FECB90 /* StreamingKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EAAC222E188AB20B008DBE33 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +270,8 @@
 		EAAC2239188AB20B008DBE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CA72B161894465100FECB90 /* StreamingKit */,
+				6CA72B141894353000FECB90 /* AVFoundation.framework */,
 				6C16EF231893DA500019A3C6 /* AFNetworking */,
 				6C16EF211893D9820019A3C6 /* SystemConfiguration.framework */,
 				EAAC223A188AB20B008DBE33 /* Foundation.framework */,
@@ -373,6 +455,12 @@
 			mainGroup = EAAC222E188AB20B008DBE33;
 			productRefGroup = EAAC2238188AB20B008DBE33 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6CA72B281894465100FECB90 /* Products */;
+					ProjectRef = 6CA72B271894465100FECB90 /* StreamingKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EAAC2236188AB20B008DBE33 /* Klara Overal */,
@@ -380,6 +468,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6CA72B3C1894465100FECB90 /* libStreamingKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libStreamingKit.a;
+			remoteRef = 6CA72B3B1894465100FECB90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6CA72B3E1894465100FECB90 /* StreamingKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StreamingKitTests.xctest;
+			remoteRef = 6CA72B3D1894465100FECB90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EAAC2235188AB20B008DBE33 /* Resources */ = {
@@ -412,18 +517,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C16EF3B1893DA500019A3C6 /* AFSecurityPolicy.m in Sources */,
+				6CA72B2F1894465100FECB90 /* STKAudioPlayer.m in Sources */,
+				6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */,
 				EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */,
 				6C16EF3A1893DA500019A3C6 /* AFNetworkReachabilityManager.m in Sources */,
 				EAAC2271188AB518008DBE33 /* AppDelegate.m in Sources */,
 				6C16EF3C1893DA500019A3C6 /* AFURLConnectionOperation.m in Sources */,
+				6CA72B301894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m in Sources */,
+				6CA72B321894465100FECB90 /* STKDataSource.m in Sources */,
 				6C16EF371893DA500019A3C6 /* AFHTTPRequestOperation.m in Sources */,
 				6C16EF391893DA500019A3C6 /* AFHTTPSessionManager.m in Sources */,
+				6CA72B331894465100FECB90 /* STKDataSourceWrapper.m in Sources */,
 				6C16EF3D1893DA500019A3C6 /* AFURLRequestSerialization.m in Sources */,
 				6C16EF171892AFF20019A3C6 /* LiveStreamView.m in Sources */,
 				6C16EF3F1893DA500019A3C6 /* AFURLSessionManager.m in Sources */,
 				6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */,
 				6C16EF421893DC350019A3C6 /* Reachability.m in Sources */,
 				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
+				6CA72B341894465100FECB90 /* STKHTTPDataSource.m in Sources */,
 				6C16EF381893DA500019A3C6 /* AFHTTPRequestOperationManager.m in Sources */,
 				EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */,
 				6C16EF3E1893DA500019A3C6 /* AFURLResponseSerialization.m in Sources */,
@@ -431,6 +542,7 @@
 				6C16EF1D1892B08C0019A3C6 /* ViewToggleButton.m in Sources */,
 				EAAC2247188AB20B008DBE33 /* main.m in Sources */,
 				6C16EF201893D93F0019A3C6 /* Util.m in Sources */,
+				6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LiveStreamView.h"
+#import "STKAudioPlayer.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface LivestreamViewController : UIViewController
-
 @property (nonatomic, strong) LiveStreamView *view;
+@property (nonatomic, strong) STKAudioPlayer *streamer;
+@property (nonatomic, strong) NSDictionary *klaraStreamURLs;
+@property (nonatomic, strong) NSString *currentAudioQuality;
 
 @end

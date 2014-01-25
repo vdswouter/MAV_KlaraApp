@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) NSString *localFrequency;
 @property (nonatomic, strong) ProgrammaModel *programData;
+@property (nonatomic, strong) UIButton *btnPlay;
+@property (nonatomic, strong) UIButton *btnPause;
 
 -(void)setLocalFrequency:(NSString *)localFrequency;
 -(void)setProgramData:(ProgrammaModel *)programData;
