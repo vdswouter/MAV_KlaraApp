@@ -22,6 +22,7 @@
 		6C16EF3E1893DA500019A3C6 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF341893DA500019A3C6 /* AFURLResponseSerialization.m */; };
 		6C16EF3F1893DA500019A3C6 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF361893DA500019A3C6 /* AFURLSessionManager.m */; };
 		6C16EF421893DC350019A3C6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF411893DC350019A3C6 /* Reachability.m */; };
+		6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -80,6 +81,8 @@
 		6C16EF361893DA500019A3C6 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		6C16EF401893DC350019A3C6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		6C16EF411893DC350019A3C6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaModel.h; sourceTree = "<group>"; };
+		6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaModel.m; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -274,6 +277,8 @@
 		EAAC226F188AB518008DBE33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */,
+				6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				6C16EF3D1893DA500019A3C6 /* AFURLRequestSerialization.m in Sources */,
 				6C16EF171892AFF20019A3C6 /* LiveStreamView.m in Sources */,
 				6C16EF3F1893DA500019A3C6 /* AFURLSessionManager.m in Sources */,
+				6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */,
 				6C16EF421893DC350019A3C6 /* Reachability.m in Sources */,
 				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
 				6C16EF381893DA500019A3C6 /* AFHTTPRequestOperationManager.m in Sources */,

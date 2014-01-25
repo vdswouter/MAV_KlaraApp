@@ -10,9 +10,12 @@
 
 #import "Util.h"
 
+#import "AFHTTPRequestOperation.h"
+
 #import "LivestreamViewController.h"
 #import "PlaylistsViewController.h"
 #import "ViewToggleButton.h"
+#import "ProgrammaModel.h"
 
 @interface AppViewController : UIViewController
 
@@ -21,6 +24,7 @@
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
 
 @property (strong, nonatomic) UIViewController *currentVC;
+@property (strong, nonatomic) ProgrammaModel *huidigProgrammaData;
 
 
 @end

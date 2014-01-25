@@ -28,9 +28,31 @@
         
         self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight-44, 320, 44)];
         [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self loadData];
     }
 
     return self;
+}
+
+- (void)loadData{
+    //loading de programmadata.
+    NSURL *URL = [NSURL URLWithString:@"http://services.vrt.be/epg/onair?channel_code=31&accept=application%2Fvnd.epg.vrt.be.onairs_1.0%2Bjson"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        id nowNode = [[[responseObject objectForKey:@"onairs"] objectAtIndex:0] objectForKey:@"now"];
+        self.huidigProgrammaData = [[ProgrammaModel alloc] init];
+        self.huidigProgrammaData.title = [nowNode objectForKey:@"title"];
+        self.huidigProgrammaData.info = [nowNode objectForKey:@"shortDescription"];
+        self.huidigProgrammaData.imgURL = [nowNode objectForKey:@"pictureUrl"];
+        self.huidigProgrammaData.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
+    
 }
 
 - (void)loadView {
@@ -45,7 +67,7 @@
     
     self.currentVC = self.livestreamVC;
     
-    [Util networkConnectionAvailable];
+
 }
 
 - (void)btnPressedHandler:(id)sender{
