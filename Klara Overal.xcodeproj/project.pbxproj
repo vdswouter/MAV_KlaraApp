@@ -23,6 +23,11 @@
 		6C16EF3F1893DA500019A3C6 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF361893DA500019A3C6 /* AFURLSessionManager.m */; };
 		6C16EF421893DC350019A3C6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF411893DC350019A3C6 /* Reachability.m */; };
 		6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */; };
+		6C16EF4A189405160019A3C6 /* Calibre-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF46189405160019A3C6 /* Calibre-Regular.otf */; };
+		6C16EF4B189405160019A3C6 /* Calibre-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF47189405160019A3C6 /* Calibre-Semibold.otf */; };
+		6C16EF4C189405160019A3C6 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF48189405160019A3C6 /* Calibre-Light.otf */; };
+		6C16EF4D189405160019A3C6 /* MetaSerifPro-Medi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */; };
+		6C16EF5618940D220019A3C6 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF5518940D220019A3C6 /* img */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -83,6 +88,11 @@
 		6C16EF411893DC350019A3C6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaModel.h; sourceTree = "<group>"; };
 		6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaModel.m; sourceTree = "<group>"; };
+		6C16EF46189405160019A3C6 /* Calibre-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Calibre-Regular.otf"; path = "../Calibre-Regular.otf"; sourceTree = "<group>"; };
+		6C16EF47189405160019A3C6 /* Calibre-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Calibre-Semibold.otf"; path = "../Calibre-Semibold.otf"; sourceTree = "<group>"; };
+		6C16EF48189405160019A3C6 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Calibre-Light.otf"; path = "../Calibre-Light.otf"; sourceTree = "<group>"; };
+		6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MetaSerifPro-Medi.otf"; path = "../MetaSerifPro-Medi.otf"; sourceTree = "<group>"; };
+		6C16EF5518940D220019A3C6 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +203,7 @@
 		EAAC2240188AB20B008DBE33 /* Klara Overal */ = {
 			isa = PBXGroup;
 			children = (
+				6C16EF5518940D220019A3C6 /* img */,
 				EAAC2269188AB518008DBE33 /* Classes */,
 				EAAC224C188AB20B008DBE33 /* Images.xcassets */,
 				EAAC2241188AB20B008DBE33 /* Supporting Files */,
@@ -203,6 +214,10 @@
 		EAAC2241188AB20B008DBE33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6C16EF46189405160019A3C6 /* Calibre-Regular.otf */,
+				6C16EF47189405160019A3C6 /* Calibre-Semibold.otf */,
+				6C16EF48189405160019A3C6 /* Calibre-Light.otf */,
+				6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */,
 				EAAC2242188AB20B008DBE33 /* Klara Overal-Info.plist */,
 				EAAC2243188AB20B008DBE33 /* InfoPlist.strings */,
 				EAAC2246188AB20B008DBE33 /* main.m */,
@@ -371,8 +386,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C16EF4C189405160019A3C6 /* Calibre-Light.otf in Resources */,
+				6C16EF4D189405160019A3C6 /* MetaSerifPro-Medi.otf in Resources */,
+				6C16EF5618940D220019A3C6 /* img in Resources */,
 				EAAC2245188AB20B008DBE33 /* InfoPlist.strings in Resources */,
+				6C16EF4B189405160019A3C6 /* Calibre-Semibold.otf in Resources */,
 				EAAC224D188AB20B008DBE33 /* Images.xcassets in Resources */,
+				6C16EF4A189405160019A3C6 /* Calibre-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

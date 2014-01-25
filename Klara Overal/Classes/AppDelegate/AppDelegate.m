@@ -19,7 +19,20 @@
     self.app = [[AppViewController alloc] initWithNibName:nil bundle:nil];
     [self.window setRootViewController:self.app];
     
+    [self enumerateFonts];
+    
     return YES;
+}
+
+- (void)enumerateFonts {
+    NSLog(@"--- START LISTING FONTS ---");
+    for (NSString *fontFamilyStrings in [UIFont familyNames]) {
+        NSLog(@"|- %@", fontFamilyStrings);
+        for (NSString *fontStrings in [UIFont fontNamesForFamilyName:fontFamilyStrings]) {
+            NSLog(@"   |-- %@",fontStrings);
+        }
+    }
+    NSLog(@"--- END LISTING FONTS ---");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

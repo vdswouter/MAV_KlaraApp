@@ -12,5 +12,5 @@
 @interface Util : NSObject
 
 +(BOOL)networkConnectionAvailable;
-
++ (id)createImageFromPNG:(NSString *)pngName InDirectory:(NSString *)dir DoYouWantImageView:(BOOL)imgView;
 @end

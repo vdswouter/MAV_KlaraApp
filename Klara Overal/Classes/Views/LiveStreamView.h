@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Util.h"
+
+#import "ProgrammaModel.h"
 
 @interface LiveStreamView : UIView
+
+@property (nonatomic, strong) NSString *localFrequency;
+@property (nonatomic, strong) ProgrammaModel *programData;
+
+-(void)setLocalFrequency:(NSString *)localFrequency;
+-(void)setProgramData:(ProgrammaModel *)programData;
 
 @end
