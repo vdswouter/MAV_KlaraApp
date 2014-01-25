@@ -48,6 +48,7 @@
         self.huidigProgrammaData.info = [nowNode objectForKey:@"shortDescription"];
         self.huidigProgrammaData.imgURL = [nowNode objectForKey:@"pictureUrl"];
         self.huidigProgrammaData.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
+        self.livestreamVC.view.programData = self.huidigProgrammaData;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

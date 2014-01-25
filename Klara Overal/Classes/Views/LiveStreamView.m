@@ -11,6 +11,9 @@
 @interface LiveStreamView ()
 
 @property (nonatomic, strong) UILabel *lblFrequency;
+@property (nonatomic, strong) UILabel *lblPresenter;
+@property (nonatomic, strong) UILabel *lblTitle;
+@property (nonatomic, strong) UILabel *lblDescription;
 
 @end
 
@@ -33,6 +36,25 @@
         UIImageView *nuOpKlara = [Util createImageFromPNG:@"nuOpKlara" InDirectory:@"img" DoYouWantImageView:YES];
         nuOpKlara.frame = CGRectMake(16, 100, CGRectGetWidth(nuOpKlara.frame), CGRectGetHeight(nuOpKlara.frame));
         [self addSubview:nuOpKlara];
+        
+        self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(50, 227, 230, 35)];
+        self.lblTitle.textAlignment = NSTextAlignmentCenter;
+        self.lblTitle.textColor = [UIColor blackColor];
+        self.lblTitle.font = [UIFont fontWithName:@"MetaSerifPro-Medi" size:23];
+        [self addSubview:self.lblTitle];
+        
+        self.lblPresenter = [[UILabel alloc] initWithFrame:CGRectMake(50, 276, 230, 20)];
+        self.lblPresenter.textColor = [UIColor colorWithWhite:100/255.0f alpha:1];
+        self.lblPresenter.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.lblPresenter];
+        
+        self.lblDescription = [[UILabel alloc] initWithFrame:CGRectMake(70, 284, 190, 50)];
+        self.lblDescription.textAlignment = NSTextAlignmentCenter;
+        self.lblDescription.numberOfLines = 2;
+        self.lblDescription.lineBreakMode = NSLineBreakByWordWrapping;
+        self.lblDescription.textColor = [UIColor colorWithWhite:100/255.0f alpha:1];
+        self.lblDescription.font = [UIFont fontWithName:@"Calibre-Light" size:11];
+        [self addSubview:self.lblDescription];
     }
     return self;
 }
@@ -45,6 +67,19 @@
 -(void)setProgramData:(ProgrammaModel *)programData{
     _programData = programData;
     
+    UIFont *lightFont = [UIFont fontWithName:@"Calibre-Light" size:11];
+    NSDictionary *lightFontDict = [NSDictionary dictionaryWithObject: lightFont forKey:NSFontAttributeName];
+    NSMutableAttributedString *lightAttrString = [[NSMutableAttributedString alloc] initWithString:@"Gepresenteerd door " attributes: lightFontDict];
+    
+    UIFont *heavyFont = [UIFont fontWithName:@"Calibre-Semibold" size:11];
+    NSDictionary *heavyFontDict = [NSDictionary dictionaryWithObject:heavyFont forKey:NSFontAttributeName];
+    NSMutableAttributedString *heavyFontAttrString = [[NSMutableAttributedString alloc]initWithString: programData.presenter attributes:heavyFontDict];
+    [lightAttrString appendAttributedString:heavyFontAttrString];
+    
+    self.lblPresenter.attributedText = lightAttrString;
+    
+    self.lblTitle.text = programData.title;
+    self.lblDescription.text = programData.info;
 }
 
 

@@ -11,4 +11,6 @@
 
 @interface LivestreamViewController : UIViewController
 
+@property (nonatomic, strong) LiveStreamView *view;
+
 @end
