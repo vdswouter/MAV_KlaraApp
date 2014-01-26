@@ -11,7 +11,7 @@
 @implementation ProgrammaModel
 
 -(id)init{
-    self.title = @"Geen programma info...";
+    self.title = @"Geen programma";
     self.imgURL = nil;
     self.presenter = @"niemand";
     self.info = @" ";

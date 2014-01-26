@@ -46,18 +46,22 @@
 
 -(void)startStream:(id)sender{
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.qualityPicker.frame = CGRectMake(17, 386, 285, 34);
         self.qualityPicker.btnMid.titleLabel.textColor = [UIColor whiteColor];
         self.qualityPicker.btnMid.backgroundColor = [UIColor blackColor];
         self.qualityPicker.btnMid.userInteractionEnabled = false;
+        self.view.btnPlay.frame = CGRectMake(CGRectGetMinX(self.view.btnPlay.frame), CGRectGetMinY(self.view.btnPlay.frame), 90, 40);
+        self.view.btnPause.frame = CGRectMake(CGRectGetMinX(self.view.btnPause.frame), CGRectGetMinY(self.view.btnPause.frame), 90, 40);
     }];
 }
 
 -(void)stopStream:(id)sender{
     [self.streamer stop];
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.qualityPicker.frame = CGRectMake(17, 450, 285, 34);
+        self.view.btnPlay.frame = CGRectMake(CGRectGetMinX(self.view.btnPlay.frame), CGRectGetMinY(self.view.btnPlay.frame), 90, 90);
+        self.view.btnPause.frame = CGRectMake(CGRectGetMinX(self.view.btnPause.frame), CGRectGetMinY(self.view.btnPause.frame), 90, 90);
     }];
 }
 

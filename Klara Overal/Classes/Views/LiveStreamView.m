@@ -56,14 +56,18 @@
         self.lblDescription.font = [UIFont fontWithName:@"Calibre-Light" size:11];
         [self addSubview:self.lblDescription];
         
-        self.btnPlay = [[UIButton alloc] initWithFrame:CGRectMake(30, 350, 100, 40)];
-        self.btnPlay.backgroundColor = [UIColor greenColor];
-        [self.btnPlay setTitle:@"play" forState:UIControlStateNormal];
+        self.btnPlay = [[UIButton alloc] initWithFrame:CGRectMake(60, 335, 90, 90)];
+        self.btnPlay.backgroundColor = [UIColor clearColor];
+        [self.btnPlay.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
+        [self.btnPlay.layer setBorderWidth:1];
+        [self.btnPlay setImage:[Util createImageFromPNG:@"play" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
         [self addSubview:self.btnPlay];
         
-        self.btnPause = [[UIButton alloc] initWithFrame:CGRectMake(200, 350, 100, 40)];
-        self.btnPause.backgroundColor = [UIColor redColor];
-        [self.btnPause setTitle:@"pause" forState:UIControlStateNormal];
+        self.btnPause = [[UIButton alloc] initWithFrame:CGRectMake(170, 335, 90, 90)];
+        self.btnPause.backgroundColor = [UIColor clearColor];
+        [self.btnPause.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
+        [self.btnPause.layer setBorderWidth:1];
+        [self.btnPause setImage:[Util createImageFromPNG:@"pause" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
         [self addSubview:self.btnPause];
         
     }

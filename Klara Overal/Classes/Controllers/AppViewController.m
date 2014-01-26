@@ -61,7 +61,7 @@
     [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
     
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, (_screenHeight*2)-44)];
-    [self.view setBackgroundColor:[UIColor redColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self.view addSubview:self.livestreamVC.view];
     [self.view addSubview:self.playlistsVC.view];
@@ -77,20 +77,22 @@
 - (void)btnPressedHandler:(id)sender{
     NSLog(@"[AppViewController] btn pressed");
     int newY;
+    UIView *oldView = self.currentVC.view;
     if (self.currentVC == self.livestreamVC) {
         newY = -(_screenHeight-66);
         [self.btnToggle toggleView:YES];
-        
+        self.playlistsVC.view.alpha = 1;
         self.currentVC = self.playlistsVC;
     }else{
         newY = 0;
         [self.btnToggle toggleView:NO];
-        
+        self.livestreamVC.view.alpha = 1;
         self.currentVC = self.livestreamVC;
     }
     
     [UIView animateWithDuration:0.5 animations:^{
         self.view.frame = CGRectMake(0, newY, self.view.frame.size.width, self.view.frame.size.height);
+        oldView.alpha = 0;
     } completion:^(BOOL finished) {
         //TODO: play pause the player/streamer
     }];

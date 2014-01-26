@@ -24,11 +24,11 @@
         [self.btnHigh setTitle:@"HOOG" forState:UIControlStateNormal];
                 
         [self.btnHigh.layer setBorderWidth:1];
-        [self.btnHigh.layer setBorderColor:[[UIColor blackColor] CGColor]];
+        [self.btnHigh.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
         [self.btnMid.layer setBorderWidth:1];
-        [self.btnMid.layer setBorderColor:[[UIColor blackColor] CGColor]];
+        [self.btnMid.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
         [self.btnLow.layer setBorderWidth:1];
-        [self.btnLow.layer setBorderColor:[[UIColor blackColor] CGColor]];
+        [self.btnLow.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
         
         [self addSubview:self.btnLow];
         [self addSubview:self.btnMid];
