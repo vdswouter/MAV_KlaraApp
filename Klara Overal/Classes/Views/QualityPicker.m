@@ -37,6 +37,7 @@
         self.buttons = [[NSArray alloc] initWithObjects:self.btnLow,self.btnMid,self.btnHigh, nil];
         
         for (UIButton *btn in self.buttons) {
+            [btn setTitleEdgeInsets:UIEdgeInsetsMake(3, 0, 0, 0)];
             btn.titleLabel.font = [UIFont fontWithName:@"Calibre-Light" size:11];
             btn.titleLabel.textColor = [UIColor blackColor];
             btn.backgroundColor = [UIColor clearColor];

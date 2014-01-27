@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor purpleColor];
+        self.backgroundColor = [UIColor blackColor];
         self.titleLabel.textColor = [UIColor whiteColor];
         [self toggleView:NO];
     }
@@ -24,9 +24,11 @@
 
 - (void)toggleView:(BOOL)upState{
     if (upState) {
-        [self setTitle:@"Streamer tonen" forState:UIControlStateNormal];
+        [self setImage:[Util createImageFromPNG:@"btnNaarLivestream" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
     }else{
-        [self setTitle:@"Playlists tonen" forState:UIControlStateNormal];
+        [self setImage:[Util createImageFromPNG:@"btnAllePlaylists" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
+        [self setImageEdgeInsets:UIEdgeInsetsMake(-10, 0, 0, 0)];
     }
 }
 
