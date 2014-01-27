@@ -39,6 +39,7 @@
 		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
 		EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */; };
+		EA505EA31896C6EF009FFBF4 /* PlaylistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -139,6 +140,8 @@
 		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
 		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		EA505EA11896C6EF009FFBF4 /* PlaylistButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistButton.h; sourceTree = "<group>"; };
+		EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistButton.m; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -402,6 +405,8 @@
 				6C16EF1C1892B08C0019A3C6 /* ViewToggleButton.m */,
 				6CA72B3F18945E1C00FECB90 /* QualityPicker.h */,
 				6CA72B4018945E1C00FECB90 /* QualityPicker.m */,
+				EA505EA11896C6EF009FFBF4 /* PlaylistButton.h */,
+				EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				6C16EF3E1893DA500019A3C6 /* AFURLResponseSerialization.m in Sources */,
 				6C16EF1A1892B0040019A3C6 /* PlaylistView.m in Sources */,
 				6C16EF1D1892B08C0019A3C6 /* ViewToggleButton.m in Sources */,
+				EA505EA31896C6EF009FFBF4 /* PlaylistButton.m in Sources */,
 				EAAC2247188AB20B008DBE33 /* main.m in Sources */,
 				6C16EF201893D93F0019A3C6 /* Util.m in Sources */,
 				6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */,

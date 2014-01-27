@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaylistButton.h"
 
 @interface PlaylistView : UIView
 

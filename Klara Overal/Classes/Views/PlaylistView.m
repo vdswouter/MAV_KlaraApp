@@ -33,6 +33,9 @@
         lblDescription.text = @"Een kleine selectie uit het aanbod van Klara, afgestemd op verschillende situaties in het dagdagelijkse leven.";
         [self addSubview:lblDescription];
 
+        PlaylistButton *btnTest = [[PlaylistButton alloc] initWithFrame:CGRectMake(0, 145, 320, 40) text:@"test" andColor:[UIColor greenColor]];
+        [self addSubview:btnTest];
+
     }
 
     return self;
