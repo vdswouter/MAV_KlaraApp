@@ -94,8 +94,6 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.view.frame = CGRectMake(0, newY, self.view.frame.size.width, self.view.frame.size.height);
         oldView.alpha = 0;
-    } completion:^(BOOL finished) {
-        //TODO: play pause the player/streamer
     }];
 }
 

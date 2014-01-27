@@ -38,6 +38,8 @@
 		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
 		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
+		6CEF1AE81896FB77003E7902 /* frequencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CEF1AE71896FB77003E7902 /* frequencies.plist */; };
+		6CEF1AEA1896FBB4003E7902 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */; };
 		EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
@@ -138,6 +140,8 @@
 		6CA72B3F18945E1C00FECB90 /* QualityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPicker.h; sourceTree = "<group>"; };
 		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
 		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6CEF1AE71896FB77003E7902 /* frequencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = frequencies.plist; sourceTree = "<group>"; };
+		6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CEF1AEA1896FBB4003E7902 /* CoreLocation.framework in Frameworks */,
 				EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */,
 				6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */,
 				6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */,
@@ -279,6 +284,7 @@
 		EAAC2239188AB20B008DBE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */,
 				EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */,
 				6CA72B42189462F500FECB90 /* QuartzCore.framework */,
 				6CA72B161894465100FECB90 /* StreamingKit */,
@@ -385,6 +391,7 @@
 		EAAC226F188AB518008DBE33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CEF1AE71896FB77003E7902 /* frequencies.plist */,
 				6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */,
 				6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */,
 			);
@@ -509,6 +516,7 @@
 				6C16EF5618940D220019A3C6 /* img in Resources */,
 				EAAC2245188AB20B008DBE33 /* InfoPlist.strings in Resources */,
 				6C16EF4B189405160019A3C6 /* Calibre-Semibold.otf in Resources */,
+				6CEF1AE81896FB77003E7902 /* frequencies.plist in Resources */,
 				EAAC224D188AB20B008DBE33 /* Images.xcassets in Resources */,
 				6C16EF4A189405160019A3C6 /* Calibre-Regular.otf in Resources */,
 			);
