@@ -1,23 +1,26 @@
 //
-//  PlaylistView.m
+//  AppView.m
 //  Klara Overal
 //
-//  Created by Wouter Vandersyppe on 24/01/14.
+//  Created by Pieter Beulque on 27/01/14.
 //  Copyright (c) 2014 Pieter Beulque. All rights reserved.
 //
 
-#import "PlaylistView.h"
+#import "AppView.h"
 
-@implementation PlaylistView
+@implementation AppView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor greenColor];
     }
     return self;
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touches began appview");
 }
 
 /*
