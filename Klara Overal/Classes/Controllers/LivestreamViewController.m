@@ -54,6 +54,9 @@
 -(void)startStream:(id)sender{
     self.view.btnPlay.userInteractionEnabled = NO;
     self.view.btnPause.userInteractionEnabled = YES;
+    for (UIButton *btn in self.qualityPicker.buttons) {
+        btn.userInteractionEnabled = YES;
+    }
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
     [UIView animateWithDuration:0.3 animations:^{
         if (![self hasFourInchDisplay]) {
@@ -64,7 +67,7 @@
         if (self.firstTime) {
             self.qualityPicker.btnMid.titleLabel.textColor = [UIColor whiteColor];
             self.qualityPicker.btnMid.backgroundColor = [UIColor blackColor];
-            self.qualityPicker.btnMid.userInteractionEnabled = false;
+            self.qualityPicker.btnMid.userInteractionEnabled = NO;
             self.firstTime = NO;
         }
     }];
@@ -85,6 +88,9 @@
     self.view.btnPause.userInteractionEnabled = NO;
     self.view.btnPlay.userInteractionEnabled = YES;
     [self.streamer stop];
+    for (UIButton *btn in self.qualityPicker.buttons) {
+        btn.userInteractionEnabled = NO;
+    }
     if (![self hasFourInchDisplay]) {
         [UIView animateWithDuration:0.3 animations:^{
             self.qualityPicker.frame = CGRectMake(17, 440, 285, 34);
