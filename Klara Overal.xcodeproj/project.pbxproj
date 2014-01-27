@@ -38,6 +38,7 @@
 		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
 		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
+		EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -137,6 +138,7 @@
 		6CA72B3F18945E1C00FECB90 /* QualityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPicker.h; sourceTree = "<group>"; };
 		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
 		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */,
 				6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */,
 				6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */,
 				6C16EF221893D9820019A3C6 /* SystemConfiguration.framework in Frameworks */,
@@ -276,6 +279,7 @@
 		EAAC2239188AB20B008DBE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */,
 				6CA72B42189462F500FECB90 /* QuartzCore.framework */,
 				6CA72B161894465100FECB90 /* StreamingKit */,
 				6CA72B141894353000FECB90 /* AVFoundation.framework */,

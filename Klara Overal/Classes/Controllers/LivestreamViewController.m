@@ -54,6 +54,17 @@
         self.view.btnPlay.frame = CGRectMake(CGRectGetMinX(self.view.btnPlay.frame), CGRectGetMinY(self.view.btnPlay.frame), 90, 40);
         self.view.btnPause.frame = CGRectMake(CGRectGetMinX(self.view.btnPause.frame), CGRectGetMinY(self.view.btnPause.frame), 90, 40);
     }];
+    
+    NSDictionary *streamInfo = @{
+        MPMediaItemPropertyTitle: @"Klara Overal Livestream",
+        MPMediaItemPropertyArtist: @"Klara",
+        MPMediaItemPropertyAlbumTitle: @"Klara Overal",
+        MPMediaItemPropertyAlbumArtist: @"Klara",
+    };
+    
+    NSLog(@"should set stream info");
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
 }
 
 -(void)stopStream:(id)sender{
