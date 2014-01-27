@@ -79,7 +79,6 @@
         [self.btnPause.layer setBorderWidth:1];
         [self.btnPause setImage:[Util createImageFromPNG:@"pause" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
         [self addSubview:self.btnPause];
-        
     }
     return self;
 }

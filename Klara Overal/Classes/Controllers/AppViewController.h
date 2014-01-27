@@ -10,17 +10,21 @@
 
 #import "Util.h"
 
-#import "AFHTTPRequestOperation.h"
+#import "AFNetworking.h"
 
 #import "LivestreamViewController.h"
-#import "PlaylistsViewController.h"
+#import "CasesViewController.h"
 #import "ViewToggleButton.h"
 #import "ProgrammaModel.h"
+#import "CaseModel.h"
+#import "AppView.h"
 
 @interface AppViewController : UIViewController
 
+@property (strong, nonatomic) AppView *appView;
+
 @property (strong, nonatomic) LivestreamViewController *livestreamVC;
-@property (strong, nonatomic) PlaylistsViewController *playlistsVC;
+@property (strong, nonatomic) CasesViewController *playlistsVC;
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
 
 @property (strong, nonatomic) UIViewController *currentVC;
