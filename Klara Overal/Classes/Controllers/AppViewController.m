@@ -70,8 +70,6 @@
     
     
     self.currentVC = self.livestreamVC;
-    
-
 }
 
 - (void)btnPressedHandler:(id)sender{

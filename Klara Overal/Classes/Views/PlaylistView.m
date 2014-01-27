@@ -15,8 +15,26 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor whiteColor];
+        
+        UILabel *lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 45)];
+        lblTitle.textAlignment = NSTextAlignmentCenter;
+        lblTitle.textColor = [UIColor blackColor];
+        lblTitle.font = [UIFont fontWithName:@"MetaSerifPro-Medi" size:29];
+        lblTitle.text = @"Playlists";
+        [self addSubview:lblTitle];
+        
+        UILabel *lblDescription = [[UILabel alloc] initWithFrame:CGRectMake(30, 45, 260, 100)];
+        lblDescription.textAlignment = NSTextAlignmentCenter;
+        lblDescription.numberOfLines = 3;
+        lblDescription.lineBreakMode = NSLineBreakByWordWrapping;
+        lblDescription.textColor = [UIColor blackColor];
+        lblDescription.font = [UIFont fontWithName:@"Calibre-Light" size:14];
+        lblDescription.text = @"Een kleine selectie uit het aanbod van Klara, afgestemd op verschillende situaties in het dagdagelijkse leven.";
+        [self addSubview:lblDescription];
+
     }
+
     return self;
 }
 
