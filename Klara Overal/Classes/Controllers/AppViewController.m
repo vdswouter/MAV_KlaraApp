@@ -79,6 +79,7 @@
     if (self.currentVC == self.livestreamVC) {
         newY = -(_screenHeight-66);
         [self.btnToggle toggleView:YES];
+        [self.livestreamVC stopStream:nil];
         self.playlistsVC.view.alpha = 1;
         self.currentVC = self.playlistsVC;
     }else{

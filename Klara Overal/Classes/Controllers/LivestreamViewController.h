@@ -19,5 +19,9 @@
 @property (nonatomic, strong) STKAudioPlayer *streamer;
 @property (nonatomic, strong) NSDictionary *klaraStreamURLs;
 @property (nonatomic, strong) NSString *currentAudioQuality;
+@property (nonatomic) BOOL firstTime;
+
+-(void)stopStream:(id)sender;
+
 
 @end
