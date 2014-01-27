@@ -51,46 +51,66 @@
     }];
     [[NSOperationQueue mainQueue] addOperation:op];
     
+    // Load cases
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager GET:@"http://student.howest.be/pieter.beulque/20132014/mav/data/cases.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id res) {
+        NSArray *jsonCases = [res objectForKey:@"cases"];
+        NSMutableArray *cases = [NSMutableArray arrayWithCapacity:[jsonCases count]];
+        
+        for (uint i = 0; i < [jsonCases count]; i++) {
+            [cases addObject:[CaseModel createFromJSON:[jsonCases objectAtIndex:i]]];
+        }
+        
+        self.playlistsVC.cases = [NSArray arrayWithArray:cases];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)loadView {
     self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
-    self.playlistsVC = [[PlaylistsViewController alloc] initWithNibName:nil bundle:nil];
+    self.playlistsVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
     
     self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight-44, 320, 44)];
     [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, (_screenHeight*2)-44)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight)];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    [self.view addSubview:self.livestreamVC.view];
-    [self.view addSubview:self.playlistsVC.view];
+    self.appView = [[AppView alloc] initWithFrame:CGRectMake(0, 0, 320, (_screenHeight*2)-44)];
+
+    [self.appView addSubview:self.livestreamVC.view];
+    [self.appView addSubview:self.playlistsVC.view];
     
-    [self.view addSubview:self.btnToggle];
+    [self.appView addSubview:self.btnToggle];
     
+    [self.view addSubview:self.appView];
     
     self.currentVC = self.livestreamVC;
 }
 
 - (void)btnPressedHandler:(id)sender{
     NSLog(@"[AppViewController] btn pressed");
-    int newY;
+    CGRect newFrame = self.appView.frame;
+
     UIView *oldView = self.currentVC.view;
     if (self.currentVC == self.livestreamVC) {
-        newY = -(_screenHeight-66);
+        newFrame.origin.y = -(_screenHeight-66);
         [self.btnToggle toggleView:YES];
         [self.livestreamVC stopStream:nil];
         self.playlistsVC.view.alpha = 1;
         self.currentVC = self.playlistsVC;
     }else{
-        newY = 0;
+        newFrame.origin.y = 0;
         [self.btnToggle toggleView:NO];
         self.livestreamVC.view.alpha = 1;
         self.currentVC = self.livestreamVC;
     }
     
     [UIView animateWithDuration:0.5 animations:^{
-        self.view.frame = CGRectMake(0, newY, self.view.frame.size.width, self.view.frame.size.height);
+        self.appView.frame = newFrame;
         oldView.alpha = 0;
     } completion:^(BOOL finished) {
         //TODO: play pause the player/streamer

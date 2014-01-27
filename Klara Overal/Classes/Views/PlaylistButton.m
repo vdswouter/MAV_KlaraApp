@@ -10,23 +10,31 @@
 
 @implementation PlaylistButton
 
-- (id)initWithFrame:(CGRect)frame text:(NSString *)text andColor:(UIColor *)color
+- (id)initWithFrame:(CGRect)frame text:(NSString *)text backgroundColor:(UIColor *)backgroundColor andColor:(UIColor *)color
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = backgroundColor;
+//
         self.titleLabel.textColor = [UIColor blackColor];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.font = [UIFont fontWithName:@"Calibre-Light" size:14];
+        [self setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
+
+//        self.userInteractionEnabled = YES;
+
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitle:[text uppercaseString] forState:UIControlStateNormal];
+        
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(20.0f, 10.0f, 0.0f, 10.0f)];
+        
+        UIView *testCircle = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) * .5 - 6, CGRectGetHeight(frame) - 26, 12, 12)];
+        testCircle.backgroundColor = color;
+        testCircle.layer.cornerRadius = 6.0f;
+        [self addSubview:testCircle];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

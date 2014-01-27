@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C16EF171892AFF20019A3C6 /* LiveStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF161892AFF20019A3C6 /* LiveStreamView.m */; };
-		6C16EF1A1892B0040019A3C6 /* PlaylistView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF191892B0040019A3C6 /* PlaylistView.m */; };
+		6C16EF1A1892B0040019A3C6 /* CasesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF191892B0040019A3C6 /* CasesView.m */; };
 		6C16EF1D1892B08C0019A3C6 /* ViewToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF1C1892B08C0019A3C6 /* ViewToggleButton.m */; };
 		6C16EF201893D93F0019A3C6 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EF1F1893D93F0019A3C6 /* Util.m */; };
 		6C16EF221893D9820019A3C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C16EF211893D9820019A3C6 /* SystemConfiguration.framework */; };
@@ -38,8 +38,15 @@
 		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
 		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
+		EA3CB8EE1897037A00707C51 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8ED1897037A00707C51 /* AppView.m */; };
+		EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F218970D9200707C51 /* CaseViewController.m */; };
+		EA3CB8F61897136400707C51 /* CaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F51897136400707C51 /* CaseView.m */; };
+		EA3CB8F918971E6900707C51 /* CloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F818971E6900707C51 /* CloseButton.m */; };
 		EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */; };
 		EA505EA31896C6EF009FFBF4 /* PlaylistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */; };
+		EA505EAA1896D2C9009FFBF4 /* PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA505EA91896D2C9009FFBF4 /* PlaylistModel.m */; };
+		EA505EAD1896D33A009FFBF4 /* PlaylistItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA505EAC1896D33A009FFBF4 /* PlaylistItemModel.m */; };
+		EA505EB01896E239009FFBF4 /* CaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA505EAF1896E239009FFBF4 /* CaseModel.m */; };
 		EAAC223B188AB20B008DBE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223A188AB20B008DBE33 /* Foundation.framework */; };
 		EAAC223D188AB20B008DBE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */; };
 		EAAC223F188AB20B008DBE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC223E188AB20B008DBE33 /* UIKit.framework */; };
@@ -54,7 +61,7 @@
 		EAAC2271188AB518008DBE33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC226C188AB518008DBE33 /* AppDelegate.m */; };
 		EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2273188AB53E008DBE33 /* AppViewController.m */; };
 		EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2276188AB551008DBE33 /* LivestreamViewController.m */; };
-		EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */; };
+		EAAC227A188AB561008DBE33 /* CasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2279188AB561008DBE33 /* CasesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +91,8 @@
 /* Begin PBXFileReference section */
 		6C16EF151892AFF20019A3C6 /* LiveStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveStreamView.h; sourceTree = "<group>"; };
 		6C16EF161892AFF20019A3C6 /* LiveStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveStreamView.m; sourceTree = "<group>"; };
-		6C16EF181892B0040019A3C6 /* PlaylistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistView.h; sourceTree = "<group>"; };
-		6C16EF191892B0040019A3C6 /* PlaylistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistView.m; sourceTree = "<group>"; };
+		6C16EF181892B0040019A3C6 /* CasesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasesView.h; sourceTree = "<group>"; };
+		6C16EF191892B0040019A3C6 /* CasesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasesView.m; sourceTree = "<group>"; };
 		6C16EF1B1892B08C0019A3C6 /* ViewToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewToggleButton.h; sourceTree = "<group>"; };
 		6C16EF1C1892B08C0019A3C6 /* ViewToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewToggleButton.m; sourceTree = "<group>"; };
 		6C16EF1E1893D93F0019A3C6 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -139,9 +146,23 @@
 		6CA72B3F18945E1C00FECB90 /* QualityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPicker.h; sourceTree = "<group>"; };
 		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
 		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EA3CB8EC1897037A00707C51 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppView.h; sourceTree = "<group>"; };
+		EA3CB8ED1897037A00707C51 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppView.m; sourceTree = "<group>"; };
+		EA3CB8F118970D9200707C51 /* CaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseViewController.h; sourceTree = "<group>"; };
+		EA3CB8F218970D9200707C51 /* CaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseViewController.m; sourceTree = "<group>"; };
+		EA3CB8F41897136400707C51 /* CaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseView.h; sourceTree = "<group>"; };
+		EA3CB8F51897136400707C51 /* CaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseView.m; sourceTree = "<group>"; };
+		EA3CB8F718971E6900707C51 /* CloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloseButton.h; sourceTree = "<group>"; };
+		EA3CB8F818971E6900707C51 /* CloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseButton.m; sourceTree = "<group>"; };
 		EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EA505EA11896C6EF009FFBF4 /* PlaylistButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistButton.h; sourceTree = "<group>"; };
 		EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistButton.m; sourceTree = "<group>"; };
+		EA505EA81896D2C9009FFBF4 /* PlaylistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistModel.h; sourceTree = "<group>"; };
+		EA505EA91896D2C9009FFBF4 /* PlaylistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistModel.m; sourceTree = "<group>"; };
+		EA505EAB1896D33A009FFBF4 /* PlaylistItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistItemModel.h; sourceTree = "<group>"; };
+		EA505EAC1896D33A009FFBF4 /* PlaylistItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistItemModel.m; sourceTree = "<group>"; };
+		EA505EAE1896E239009FFBF4 /* CaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseModel.h; sourceTree = "<group>"; };
+		EA505EAF1896E239009FFBF4 /* CaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseModel.m; sourceTree = "<group>"; };
 		EAAC2237188AB20B008DBE33 /* Klara Overal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Klara Overal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC223A188AB20B008DBE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAAC223C188AB20B008DBE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,8 +183,8 @@
 		EAAC2273188AB53E008DBE33 /* AppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppViewController.m; sourceTree = "<group>"; };
 		EAAC2275188AB551008DBE33 /* LivestreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivestreamViewController.h; sourceTree = "<group>"; };
 		EAAC2276188AB551008DBE33 /* LivestreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivestreamViewController.m; sourceTree = "<group>"; };
-		EAAC2278188AB561008DBE33 /* PlaylistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsViewController.h; sourceTree = "<group>"; };
-		EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsViewController.m; sourceTree = "<group>"; };
+		EAAC2278188AB561008DBE33 /* CasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasesViewController.h; sourceTree = "<group>"; };
+		EAAC2279188AB561008DBE33 /* CasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +281,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EA505EA41896CFED009FFBF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA505EA51896CFED009FFBF4 /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA505EA51896CFED009FFBF4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		EAAC222E188AB20B008DBE33 = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +335,7 @@
 		EAAC2240188AB20B008DBE33 /* Klara Overal */ = {
 			isa = PBXGroup;
 			children = (
+				EA505EA41896CFED009FFBF4 /* Resources */,
 				6C16EF5518940D220019A3C6 /* img */,
 				EAAC2269188AB518008DBE33 /* Classes */,
 				EAAC224C188AB20B008DBE33 /* Images.xcassets */,
@@ -368,8 +405,10 @@
 				EAAC2273188AB53E008DBE33 /* AppViewController.m */,
 				EAAC2275188AB551008DBE33 /* LivestreamViewController.h */,
 				EAAC2276188AB551008DBE33 /* LivestreamViewController.m */,
-				EAAC2278188AB561008DBE33 /* PlaylistsViewController.h */,
-				EAAC2279188AB561008DBE33 /* PlaylistsViewController.m */,
+				EAAC2278188AB561008DBE33 /* CasesViewController.h */,
+				EAAC2279188AB561008DBE33 /* CasesViewController.m */,
+				EA3CB8F118970D9200707C51 /* CaseViewController.h */,
+				EA3CB8F218970D9200707C51 /* CaseViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -390,6 +429,12 @@
 			children = (
 				6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */,
 				6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */,
+				EA505EA81896D2C9009FFBF4 /* PlaylistModel.h */,
+				EA505EA91896D2C9009FFBF4 /* PlaylistModel.m */,
+				EA505EAB1896D33A009FFBF4 /* PlaylistItemModel.h */,
+				EA505EAC1896D33A009FFBF4 /* PlaylistItemModel.m */,
+				EA505EAE1896E239009FFBF4 /* CaseModel.h */,
+				EA505EAF1896E239009FFBF4 /* CaseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,14 +444,20 @@
 			children = (
 				6C16EF151892AFF20019A3C6 /* LiveStreamView.h */,
 				6C16EF161892AFF20019A3C6 /* LiveStreamView.m */,
-				6C16EF181892B0040019A3C6 /* PlaylistView.h */,
-				6C16EF191892B0040019A3C6 /* PlaylistView.m */,
+				6C16EF181892B0040019A3C6 /* CasesView.h */,
+				6C16EF191892B0040019A3C6 /* CasesView.m */,
 				6C16EF1B1892B08C0019A3C6 /* ViewToggleButton.h */,
 				6C16EF1C1892B08C0019A3C6 /* ViewToggleButton.m */,
 				6CA72B3F18945E1C00FECB90 /* QualityPicker.h */,
 				6CA72B4018945E1C00FECB90 /* QualityPicker.m */,
 				EA505EA11896C6EF009FFBF4 /* PlaylistButton.h */,
 				EA505EA21896C6EF009FFBF4 /* PlaylistButton.m */,
+				EA3CB8EC1897037A00707C51 /* AppView.h */,
+				EA3CB8ED1897037A00707C51 /* AppView.m */,
+				EA3CB8F41897136400707C51 /* CaseView.h */,
+				EA3CB8F51897136400707C51 /* CaseView.m */,
+				EA3CB8F718971E6900707C51 /* CloseButton.h */,
+				EA3CB8F818971E6900707C51 /* CloseButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,6 +587,7 @@
 			files = (
 				6C16EF3B1893DA500019A3C6 /* AFSecurityPolicy.m in Sources */,
 				6CA72B2F1894465100FECB90 /* STKAudioPlayer.m in Sources */,
+				EA3CB8F61897136400707C51 /* CaseView.m in Sources */,
 				6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */,
 				EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */,
 				6C16EF3A1893DA500019A3C6 /* AFNetworkReachabilityManager.m in Sources */,
@@ -543,6 +595,7 @@
 				6C16EF3C1893DA500019A3C6 /* AFURLConnectionOperation.m in Sources */,
 				6CA72B301894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m in Sources */,
 				6CA72B321894465100FECB90 /* STKDataSource.m in Sources */,
+				EA3CB8F918971E6900707C51 /* CloseButton.m in Sources */,
 				6C16EF371893DA500019A3C6 /* AFHTTPRequestOperation.m in Sources */,
 				6C16EF391893DA500019A3C6 /* AFHTTPSessionManager.m in Sources */,
 				6CA72B331894465100FECB90 /* STKDataSourceWrapper.m in Sources */,
@@ -552,16 +605,21 @@
 				6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */,
 				6C16EF421893DC350019A3C6 /* Reachability.m in Sources */,
 				6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */,
-				EAAC227A188AB561008DBE33 /* PlaylistsViewController.m in Sources */,
+				EAAC227A188AB561008DBE33 /* CasesViewController.m in Sources */,
+				EA505EB01896E239009FFBF4 /* CaseModel.m in Sources */,
 				6CA72B341894465100FECB90 /* STKHTTPDataSource.m in Sources */,
 				6C16EF381893DA500019A3C6 /* AFHTTPRequestOperationManager.m in Sources */,
 				EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */,
 				6C16EF3E1893DA500019A3C6 /* AFURLResponseSerialization.m in Sources */,
-				6C16EF1A1892B0040019A3C6 /* PlaylistView.m in Sources */,
+				6C16EF1A1892B0040019A3C6 /* CasesView.m in Sources */,
 				6C16EF1D1892B08C0019A3C6 /* ViewToggleButton.m in Sources */,
 				EA505EA31896C6EF009FFBF4 /* PlaylistButton.m in Sources */,
 				EAAC2247188AB20B008DBE33 /* main.m in Sources */,
+				EA505EAA1896D2C9009FFBF4 /* PlaylistModel.m in Sources */,
+				EA505EAD1896D33A009FFBF4 /* PlaylistItemModel.m in Sources */,
+				EA3CB8EE1897037A00707C51 /* AppView.m in Sources */,
 				6C16EF201893D93F0019A3C6 /* Util.m in Sources */,
+				EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */,
 				6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Pieter Beulque. All rights reserved.
 //
 
-#import "PlaylistView.h"
+#import "CasesView.h"
 
-@implementation PlaylistView
+@implementation CasesView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,7 +24,7 @@
         lblTitle.text = @"Playlists";
         [self addSubview:lblTitle];
         
-        UILabel *lblDescription = [[UILabel alloc] initWithFrame:CGRectMake(30, 45, 260, 100)];
+        UILabel *lblDescription = [[UILabel alloc] initWithFrame:CGRectMake(30, 45, 260, 80)];
         lblDescription.textAlignment = NSTextAlignmentCenter;
         lblDescription.numberOfLines = 3;
         lblDescription.lineBreakMode = NSLineBreakByWordWrapping;
@@ -32,13 +32,33 @@
         lblDescription.font = [UIFont fontWithName:@"Calibre-Light" size:14];
         lblDescription.text = @"Een kleine selectie uit het aanbod van Klara, afgestemd op verschillende situaties in het dagdagelijkse leven.";
         [self addSubview:lblDescription];
-
-        PlaylistButton *btnTest = [[PlaylistButton alloc] initWithFrame:CGRectMake(0, 145, 320, 40) text:@"test" andColor:[UIColor greenColor]];
-        [self addSubview:btnTest];
-
+        
+        // @todo - Fix height
+        
+        self.cases = [[UIView alloc] initWithFrame:CGRectMake(0, 125, 320, 423)];
+        [self addSubview:self.cases];
     }
 
     return self;
+}
+
+-(void) renderCases:(NSArray *)cases {
+    uint yPos = 0;
+    uint height = 72;
+
+    NSMutableArray *buttons = [NSMutableArray arrayWithCapacity:[cases count]];
+
+    for (uint i = 0; i < [cases count]; i++) {
+        UIColor *bgColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:((i % 2) ? 1.0f : 0.94f) alpha:1.0f];
+        CaseModel *currentCase = [cases objectAtIndex:i];
+        PlaylistButton *btn = [[PlaylistButton alloc] initWithFrame:CGRectMake(0, yPos, 320, height) text:currentCase.title backgroundColor:bgColor andColor:[UIColor blackColor]];
+        [btn setTag:i];
+        yPos += height;
+        [self.cases addSubview:btn];
+        [buttons addObject:btn];
+    }
+    
+    self.caseButtons = [NSArray arrayWithArray:buttons];
 }
 
 /*

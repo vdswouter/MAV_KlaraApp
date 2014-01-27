@@ -10,6 +10,6 @@
 
 @interface PlaylistButton : UIButton
 
-- (id)initWithFrame:(CGRect)frame text:(NSString *)text andColor:(UIColor *)color;
+- (id)initWithFrame:(CGRect)frame text:(NSString *)text backgroundColor:(UIColor *)backgroundColor andColor:(UIColor *)color;
 
 @end

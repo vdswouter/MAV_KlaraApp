@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PlaylistButton.h"
+#import "CaseModel.h"
 
-@interface PlaylistView : UIView
+@interface CasesView : UIView
+
+@property (nonatomic, strong) UIView *cases;
+@property (nonatomic, strong) NSArray *caseButtons;
+
+-(void) renderCases:(NSArray *)cases;
 
 @end
