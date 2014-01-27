@@ -11,6 +11,7 @@
 #import "QualityPicker.h"
 #import "STKAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+@import MediaPlayer;
 
 @interface LivestreamViewController : UIViewController
 @property (nonatomic, strong) LiveStreamView *view;

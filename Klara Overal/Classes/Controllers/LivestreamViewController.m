@@ -68,6 +68,17 @@
             self.firstTime = NO;
         }
     }];
+    
+    NSDictionary *streamInfo = @{
+        MPMediaItemPropertyTitle: @"Klara Overal Livestream",
+        MPMediaItemPropertyArtist: @"Klara",
+        MPMediaItemPropertyAlbumTitle: @"Klara Overal",
+        MPMediaItemPropertyAlbumArtist: @"Klara",
+    };
+    
+    NSLog(@"should set stream info");
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
 }
 
 -(void)stopStream:(id)sender{
