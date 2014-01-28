@@ -73,13 +73,13 @@
     self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
     self.playlistsVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
     
-    self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight-44, 320, 44)];
+    self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight - 50, 320, 50)];
     [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
     
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight)];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    self.appView = [[AppView alloc] initWithFrame:CGRectMake(0, 0, 320, (_screenHeight*2)-44)];
+    self.appView = [[AppView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight * 2 - 50)];
 
     [self.appView addSubview:self.livestreamVC.view];
     [self.appView addSubview:self.playlistsVC.view];
@@ -97,7 +97,7 @@
 
     UIView *oldView = self.currentVC.view;
     if (self.currentVC == self.livestreamVC) {
-        newFrame.origin.y = -(_screenHeight-66);
+        newFrame.origin.y = -(_screenHeight-66-6);
         [self.btnToggle toggleView:YES];
         [self.livestreamVC stopStream:nil];
         self.playlistsVC.view.alpha = 1;
