@@ -44,7 +44,7 @@
     
     CGRect qualityPickerFrame;
     if ([self hasFourInchDisplay]) {
-        qualityPickerFrame = CGRectMake(17, 467, 285, 34);
+        qualityPickerFrame = CGRectMake(17, 4, 285, 34);
     }else{
         qualityPickerFrame = CGRectMake(17, 440, 285, 34);
     }
@@ -62,14 +62,13 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"frequencies" ofType:@"plist"];
     self.frequencies = [NSArray arrayWithContentsOfFile:path];
     
-    NSLog(@"curretn location: %f",currentLocation.coordinate.latitude);
     for (NSDictionary *antenna in self.frequencies) {
         double d = [Util CalculateDistanceBetween2PointsWithP1Lat:currentLocation.coordinate.latitude P1Lon:currentLocation.coordinate.longitude P2Lat:[[antenna objectForKey:@"latitude"] doubleValue] P2Lon:[[antenna objectForKey:@"longitude"] doubleValue]];
         
-        NSLog(@"the distance to %@ is %f",[antenna objectForKey:@"location"],d);
         if (smallestDistance == 0 || d < smallestDistance) {
             smallestDistance = d;
             self.view.localFrequency = [antenna objectForKey:@"frequency"];
+            break;
             NSLog(@"%@",[antenna objectForKey:@"frequency"]);
         }
     }
