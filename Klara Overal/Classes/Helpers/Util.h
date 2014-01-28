@@ -13,4 +13,6 @@
 
 +(BOOL)networkConnectionAvailable;
 + (id)createImageFromPNG:(NSString *)pngName InDirectory:(NSString *)dir DoYouWantImageView:(BOOL)imgView;
++(double)CalculateDistanceBetween2PointsWithP1Lat:(double)p1Lat P1Lon:(double)p1Lon P2Lat:(double)p2Lat P2Lon:(double)p2Lon;
+
 @end

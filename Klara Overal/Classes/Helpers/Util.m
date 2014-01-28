@@ -36,4 +36,8 @@
     }
 }
 
++(double)CalculateDistanceBetween2PointsWithP1Lat:(double)p1Lat P1Lon:(double)p1Lon P2Lat:(double)p2Lat P2Lon:(double)p2Lon{
+    return acos( sin(p1Lat) * sin(p2Lat) + cos(p1Lat) * cos(p2Lat) * cos(p2Lon-p1Lon)) * 6371;
+}
+
 @end

@@ -10,6 +10,9 @@
 
 @interface LivestreamViewController ()
 
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSArray *frequencies;
+
 @end
 
 @implementation LivestreamViewController
@@ -25,6 +28,11 @@
         self.klaraStreamURLs = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://mp3.streampower.be/klara-high.mp3",@"HIGH",@"http://mp3.streampower.be/klara-mid.mp3",@"MID",@"http://mp3.streampower.be/klara-low.mp3",@"LOW",nil];
 
         self.streamer = [[STKAudioPlayer alloc] init];
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        [self.locationManager startUpdatingLocation];
     }
     return self;
 }
@@ -45,6 +53,28 @@
     [self.view addSubview:self.qualityPicker];
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    [self.locationManager stopUpdatingLocation];
+
+    double smallestDistance = 0;
+    CLLocation *currentLocation = self.locationManager.location;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"frequencies" ofType:@"plist"];
+    self.frequencies = [NSArray arrayWithContentsOfFile:path];
+    
+    NSLog(@"curretn location: %f",currentLocation.coordinate.latitude);
+    for (NSDictionary *antenna in self.frequencies) {
+        double d = [Util CalculateDistanceBetween2PointsWithP1Lat:currentLocation.coordinate.latitude P1Lon:currentLocation.coordinate.longitude P2Lat:[[antenna objectForKey:@"latitude"] doubleValue] P2Lon:[[antenna objectForKey:@"longitude"] doubleValue]];
+        
+        NSLog(@"the distance to %@ is %f",[antenna objectForKey:@"location"],d);
+        if (smallestDistance == 0 || d < smallestDistance) {
+            smallestDistance = d;
+            self.view.localFrequency = [antenna objectForKey:@"frequency"];
+            NSLog(@"%@",[antenna objectForKey:@"frequency"]);
+        }
+    }
+}
+
 -(void)qualityChangedHandler:(NSNotification *)sender{
     [self.streamer stop];
     self.currentAudioQuality = [[sender userInfo] objectForKey:@"quality"];
@@ -54,6 +84,9 @@
 -(void)startStream:(id)sender{
     self.view.btnPlay.userInteractionEnabled = NO;
     self.view.btnPause.userInteractionEnabled = YES;
+    for (UIButton *btn in self.qualityPicker.buttons) {
+        btn.userInteractionEnabled = YES;
+    }
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
     [UIView animateWithDuration:0.3 animations:^{
         if (![self hasFourInchDisplay]) {
@@ -64,7 +97,7 @@
         if (self.firstTime) {
             self.qualityPicker.btnMid.titleLabel.textColor = [UIColor whiteColor];
             self.qualityPicker.btnMid.backgroundColor = [UIColor blackColor];
-            self.qualityPicker.btnMid.userInteractionEnabled = false;
+            self.qualityPicker.btnMid.userInteractionEnabled = NO;
             self.firstTime = NO;
         }
     }];
@@ -85,6 +118,9 @@
     self.view.btnPause.userInteractionEnabled = NO;
     self.view.btnPlay.userInteractionEnabled = YES;
     [self.streamer stop];
+    for (UIButton *btn in self.qualityPicker.buttons) {
+        btn.userInteractionEnabled = NO;
+    }
     if (![self hasFourInchDisplay]) {
         [UIView animateWithDuration:0.3 animations:^{
             self.qualityPicker.frame = CGRectMake(17, 440, 285, 34);

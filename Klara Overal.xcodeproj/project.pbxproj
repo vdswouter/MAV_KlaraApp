@@ -40,6 +40,8 @@
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
 		EA02E15E18979A3C00C135C8 /* PlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E15D18979A3C00C135C8 /* PlaylistTableViewController.m */; };
 		EA02E16318979CBA00C135C8 /* PlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */; };
+		6CEF1AE81896FB77003E7902 /* frequencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CEF1AE71896FB77003E7902 /* frequencies.plist */; };
+		6CEF1AEA1896FBB4003E7902 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */; };
 		EA3CB8EE1897037A00707C51 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8ED1897037A00707C51 /* AppView.m */; };
 		EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F218970D9200707C51 /* CaseViewController.m */; };
 		EA3CB8F61897136400707C51 /* CaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F51897136400707C51 /* CaseView.m */; };
@@ -152,6 +154,8 @@
 		EA02E15D18979A3C00C135C8 /* PlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewController.m; sourceTree = "<group>"; };
 		EA02E16118979CBA00C135C8 /* PlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewCell.h; sourceTree = "<group>"; };
 		EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewCell.m; sourceTree = "<group>"; };
+		6CEF1AE71896FB77003E7902 /* frequencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = frequencies.plist; sourceTree = "<group>"; };
+		6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA3CB8EC1897037A00707C51 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppView.h; sourceTree = "<group>"; };
 		EA3CB8ED1897037A00707C51 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppView.m; sourceTree = "<group>"; };
 		EA3CB8F118970D9200707C51 /* CaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseViewController.h; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CEF1AEA1896FBB4003E7902 /* CoreLocation.framework in Frameworks */,
 				EA505E9E1896A96E009FFBF4 /* MediaPlayer.framework in Frameworks */,
 				6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */,
 				6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */,
@@ -324,6 +329,7 @@
 		EAAC2239188AB20B008DBE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */,
 				EA505E9D1896A96E009FFBF4 /* MediaPlayer.framework */,
 				6CA72B42189462F500FECB90 /* QuartzCore.framework */,
 				6CA72B161894465100FECB90 /* StreamingKit */,
@@ -435,6 +441,7 @@
 		EAAC226F188AB518008DBE33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CEF1AE71896FB77003E7902 /* frequencies.plist */,
 				6C16EF431893DF0D0019A3C6 /* ProgrammaModel.h */,
 				6C16EF441893DF0D0019A3C6 /* ProgrammaModel.m */,
 				EA505EA81896D2C9009FFBF4 /* PlaylistModel.h */,
@@ -575,6 +582,7 @@
 				6C16EF5618940D220019A3C6 /* img in Resources */,
 				EAAC2245188AB20B008DBE33 /* InfoPlist.strings in Resources */,
 				6C16EF4B189405160019A3C6 /* Calibre-Semibold.otf in Resources */,
+				6CEF1AE81896FB77003E7902 /* frequencies.plist in Resources */,
 				EAAC224D188AB20B008DBE33 /* Images.xcassets in Resources */,
 				6C16EF4A189405160019A3C6 /* Calibre-Regular.otf in Resources */,
 			);

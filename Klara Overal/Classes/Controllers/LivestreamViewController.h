@@ -11,9 +11,10 @@
 #import "QualityPicker.h"
 #import "STKAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 @import MediaPlayer;
 
-@interface LivestreamViewController : UIViewController
+@interface LivestreamViewController : UIViewController<CLLocationManagerDelegate>
 @property (nonatomic, strong) LiveStreamView *view;
 @property (nonatomic, strong) QualityPicker *qualityPicker;
 @property (nonatomic, strong) STKAudioPlayer *streamer;

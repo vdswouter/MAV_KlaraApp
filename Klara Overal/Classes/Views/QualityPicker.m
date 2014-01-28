@@ -41,6 +41,7 @@
             btn.titleLabel.font = [UIFont fontWithName:@"Calibre-Light" size:11];
             btn.titleLabel.textColor = [UIColor blackColor];
             btn.backgroundColor = [UIColor clearColor];
+            btn.userInteractionEnabled = NO;
             [btn addTarget:self action:@selector(touchHandler:) forControlEvents:UIControlEventTouchUpInside];
         }
     }

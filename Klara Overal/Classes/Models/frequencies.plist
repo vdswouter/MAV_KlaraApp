@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>frequency</key>
+		<string>92.0 fm</string>
+		<key>latitude</key>
+		<real>51.21945</real>
+		<key>location</key>
+		<string>Antwerpen</string>
+		<key>longitude</key>
+		<real>4.402461</real>
+	</dict>
+	<dict>
+		<key>frequency</key>
+		<string>90.4 fm</string>
+		<key>latitude</key>
+		<real>51.014844</real>
+		<key>location</key>
+		<string>Egem</string>
+		<key>longitude</key>
+		<real>3.25903</real>
+	</dict>
+	<dict>
+		<key>frequency</key>
+		<string>89.9 fm</string>
+		<key>latitude</key>
+		<real>50.96613</real>
+		<key>location</key>
+		<string>Genk</string>
+		<key>longitude</key>
+		<real>5.5021</real>
+	</dict>
+	<dict>
+		<key>frequency</key>
+		<string>96.4 fm</string>
+		<key>latitude</key>
+		<real>51.249753</real>
+		<key>location</key>
+		<string>Schoten</string>
+		<key>longitude</key>
+		<real>4.497706</real>
+	</dict>
+	<dict>
+		<key>frequency</key>
+		<string>89.5 fm</string>
+		<key>latitude</key>
+		<real>50.7798</real>
+		<key>location</key>
+		<string>Sint-Pieters-Leeuw</string>
+		<key>longitude</key>
+		<real>4.24368</real>
+	</dict>
+</array>
+</plist>
