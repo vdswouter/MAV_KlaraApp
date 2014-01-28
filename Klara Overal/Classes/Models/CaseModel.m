@@ -13,6 +13,7 @@
 +(CaseModel *) createFromJSON:(NSDictionary *)json {
     CaseModel *caseModel = [[CaseModel alloc] init];
     
+    caseModel.cleanTitle = [json objectForKey:@"class"];
     caseModel.title = [json objectForKey:@"title"];
     caseModel.subtitle = [json objectForKey:@"subtitle"];
     caseModel.description = [[json objectForKey:@"text"] objectAtIndex:0];

@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CaseModel.h"
 #import "CaseView.h"
+#import "PlaylistTableViewController.h"
 
 @interface CaseViewController : UIViewController
 
 @property (nonatomic, strong) CaseView *view;
 @property (nonatomic, strong) CaseModel *currentCase;
+@property (nonatomic, strong) PlaylistTableViewController *playlistVC;
 
 - (void)show;
 - (void)hide;

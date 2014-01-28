@@ -11,6 +11,7 @@
 
 @interface CaseView : UIView
 
+@property (nonatomic, strong) UIImageView *imgIcon;
 @property (nonatomic, strong) UILabel *lblTitle;
 @property (nonatomic, strong) UILabel *lblSubtitle;
 @property (nonatomic, strong) CloseButton *btnClose;

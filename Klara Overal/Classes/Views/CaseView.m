@@ -14,23 +14,28 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor colorWithRed:0.863f green:0.898f blue:0.643f alpha:1.0f];
 
-        self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 45)];
+//        self.imgIcon = [[UIImageView alloc] initWithFrame:CGRectMake(48, 10, 112, 112)];
+        self.imgIcon = [Util createImageFromPNG:@"case-onderweg" InDirectory:@"img" DoYouWantImageView:YES];
+        self.imgIcon.frame = CGRectMake(104, 45, 112, 112);
+        [self addSubview:self.imgIcon];
+
+        self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 175, 300, 45)];
         self.lblTitle.textAlignment = NSTextAlignmentCenter;
         self.lblTitle.textColor = [UIColor blackColor];
         self.lblTitle.font = [UIFont fontWithName:@"MetaSerifPro-Medi" size:29];
         self.lblTitle.text = @"Title placeholder";
         [self addSubview:self.lblTitle];
 
-        self.lblSubtitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 45, 300, 45)];
+        self.lblSubtitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 220, 300, 45)];
         self.lblSubtitle.textAlignment = NSTextAlignmentCenter;
         self.lblSubtitle.textColor = [UIColor blackColor];
-        self.lblSubtitle.font = [UIFont fontWithName:@"Calibre-Light" size:14];
+        self.lblSubtitle.font = [UIFont fontWithName:@"Calibre-Light" size:12];
         self.lblSubtitle.text = @"Subtitle placeholder";
         [self addSubview:self.lblSubtitle];
-        
-        self.btnClose = [[CloseButton alloc] initWithFrame:CGRectMake(300 - 24, 20, 24, 24)];
+
+        self.btnClose = [[CloseButton alloc] initWithFrame:CGRectMake(300 - 44, 20, 44, 44)];
         [self addSubview:self.btnClose];
     }
     return self;

@@ -18,13 +18,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        NSLog(@"wueheu");
+        self.playlistVC = [[PlaylistTableViewController alloc] initWithStyle:UITableViewStylePlain];
     }
     return self;
 }
 
 - (id)initWithCase:(CaseModel *)newCase {
-    self = [super initWithNibName:nil bundle:nil];
+    self = [self initWithNibName:nil bundle:nil];
     if (self) {
         self.currentCase = newCase;
     }
@@ -33,16 +34,29 @@
 }
 
 - (void)loadView {
-    self.view = [[CaseView alloc] initWithFrame:CGRectMake(320, 0, 320, 568)];
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    frame.origin.x = frame.size.width;
+    frame.origin.y = 0;
+
+    self.view = [[CaseView alloc] initWithFrame:frame];
     
     [self.view.btnClose addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setCurrentCase:(CaseModel *)newCase {
     _currentCase = newCase;
-
+    
+    self.playlistVC.playlistItems = self.currentCase.playlist;
+    
+    [self.view.imgIcon setImage:[Util createImageFromPNG:@"case-wandeling" InDirectory:@"img" DoYouWantImageView:NO]];
     self.view.lblTitle.text = self.currentCase.title;
     self.view.lblSubtitle.text = [self.currentCase.subtitle uppercaseString];
+
+    CGRect frame = CGRectMake(0, 280, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 280);
+    self.playlistVC.view.frame = frame;
+
+    [self.view addSubview:self.playlistVC.view];
+    
 }
 
 - (void)show {
