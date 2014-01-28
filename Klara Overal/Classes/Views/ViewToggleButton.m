@@ -25,10 +25,10 @@
 - (void)toggleView:(BOOL)upState{
     if (upState) {
         [self setImage:[Util createImageFromPNG:@"btnNaarLivestream" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
-        [self setImageEdgeInsets:UIEdgeInsetsMake(16, 0, 0, 0)];
+//        [self setImageEdgeInsets:UIEdgeInsetsMake(16, 0, 0, 0)];
     }else{
         [self setImage:[Util createImageFromPNG:@"btnAllePlaylists" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
-        [self setImageEdgeInsets:UIEdgeInsetsMake(-10, 0, 0, 0)];
+//        [self setImageEdgeInsets:UIEdgeInsetsMake(-10, 0, 0, 0)];
     }
 }
 
