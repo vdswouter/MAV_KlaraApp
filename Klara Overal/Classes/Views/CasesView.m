@@ -51,7 +51,7 @@
     for (uint i = 0; i < [cases count]; i++) {
         UIColor *bgColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:((i % 2) ? 1.0f : 0.94f) alpha:1.0f];
         CaseModel *currentCase = [cases objectAtIndex:i];
-        PlaylistButton *btn = [[PlaylistButton alloc] initWithFrame:CGRectMake(0, yPos, 320, height) text:currentCase.title backgroundColor:bgColor andColor:[UIColor blackColor]];
+        PlaylistButton *btn = [[PlaylistButton alloc] initWithFrame:CGRectMake(0, yPos, 320, height) text:currentCase.title backgroundColor:bgColor andColor:currentCase.color];
         [btn setTag:i];
         yPos += height;
         [self.cases addSubview:btn];

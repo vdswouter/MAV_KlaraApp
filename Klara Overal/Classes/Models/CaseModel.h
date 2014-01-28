@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *subtitle;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSArray *playlist;
+@property (nonatomic, strong) UIColor *color;
 
 +(CaseModel *) createFromJSON:(NSDictionary *)json;
 

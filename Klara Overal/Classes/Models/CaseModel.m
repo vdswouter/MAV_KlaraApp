@@ -26,6 +26,9 @@
         [playlist addObject:playlistItemModel];
     }
     
+    NSDictionary *jsonColor = [json objectForKey:@"color"];
+    caseModel.color = [UIColor colorWithRed:[[jsonColor objectForKey:@"r"] floatValue]/255.0f green:[[jsonColor objectForKey:@"g"] floatValue]/255.0f blue:[[jsonColor objectForKey:@"b"] floatValue]/255.0f alpha:1.0f];
+        
     caseModel.playlist = [NSArray arrayWithArray:playlist];
     
     return caseModel;

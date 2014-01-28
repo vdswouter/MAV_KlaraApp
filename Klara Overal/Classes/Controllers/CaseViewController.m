@@ -48,6 +48,7 @@
     
     self.playlistVC.playlistItems = self.currentCase.playlist;
     
+    self.view.backgroundColor = self.currentCase.color;
     [self.view.imgIcon setImage:[Util createImageFromPNG:self.currentCase.cleanTitle InDirectory:@"img" DoYouWantImageView:NO]];
     self.view.lblTitle.text = self.currentCase.title;
     self.view.lblSubtitle.text = [self.currentCase.subtitle uppercaseString];

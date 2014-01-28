@@ -14,8 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.863f green:0.898f blue:0.643f alpha:1.0f];
-
         UIView *infoContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 240)];
         infoContainer.backgroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:0.3f];
         [self addSubview:infoContainer];
