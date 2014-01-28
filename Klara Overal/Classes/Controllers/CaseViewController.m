@@ -48,11 +48,11 @@
     
     self.playlistVC.playlistItems = self.currentCase.playlist;
     
-    [self.view.imgIcon setImage:[Util createImageFromPNG:@"case-wandeling" InDirectory:@"img" DoYouWantImageView:NO]];
+    [self.view.imgIcon setImage:[Util createImageFromPNG:self.currentCase.cleanTitle InDirectory:@"img" DoYouWantImageView:NO]];
     self.view.lblTitle.text = self.currentCase.title;
     self.view.lblSubtitle.text = [self.currentCase.subtitle uppercaseString];
 
-    CGRect frame = CGRectMake(0, 280, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 280);
+    CGRect frame = CGRectMake(0, 240, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 240 - 55 - 24);
     self.playlistVC.view.frame = frame;
 
     [self.view addSubview:self.playlistVC.view];

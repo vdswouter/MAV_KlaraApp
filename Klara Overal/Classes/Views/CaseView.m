@@ -16,27 +16,31 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:0.863f green:0.898f blue:0.643f alpha:1.0f];
 
+        UIView *infoContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 240)];
+        infoContainer.backgroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:0.3f];
+        [self addSubview:infoContainer];
+        
 //        self.imgIcon = [[UIImageView alloc] initWithFrame:CGRectMake(48, 10, 112, 112)];
         self.imgIcon = [Util createImageFromPNG:@"case-onderweg" InDirectory:@"img" DoYouWantImageView:YES];
-        self.imgIcon.frame = CGRectMake(104, 45, 112, 112);
-        [self addSubview:self.imgIcon];
+        self.imgIcon.frame = CGRectMake(104, 30, 112, 112);
+        [infoContainer addSubview:self.imgIcon];
 
-        self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 175, 300, 45)];
+        self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, 300, 45)];
         self.lblTitle.textAlignment = NSTextAlignmentCenter;
         self.lblTitle.textColor = [UIColor blackColor];
         self.lblTitle.font = [UIFont fontWithName:@"MetaSerifPro-Medi" size:29];
         self.lblTitle.text = @"Title placeholder";
-        [self addSubview:self.lblTitle];
+        [infoContainer addSubview:self.lblTitle];
 
-        self.lblSubtitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 220, 300, 45)];
+        self.lblSubtitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 190, 300, 45)];
         self.lblSubtitle.textAlignment = NSTextAlignmentCenter;
         self.lblSubtitle.textColor = [UIColor blackColor];
         self.lblSubtitle.font = [UIFont fontWithName:@"Calibre-Light" size:12];
         self.lblSubtitle.text = @"Subtitle placeholder";
-        [self addSubview:self.lblSubtitle];
+        [infoContainer addSubview:self.lblSubtitle];
 
         self.btnClose = [[CloseButton alloc] initWithFrame:CGRectMake(300 - 44, 20, 44, 44)];
-        [self addSubview:self.btnClose];
+        [infoContainer addSubview:self.btnClose];
     }
     return self;
 }
