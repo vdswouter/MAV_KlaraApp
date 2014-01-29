@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LiveStreamView.h"
-#import "QualityPicker.h"
 #import "STKAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreLocation/CoreLocation.h>

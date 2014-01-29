@@ -11,7 +11,6 @@
 
 #import "ProgrammaModel.h"
 #import "PlaylistButton.h"
-#import "QualityPicker.h"
 #import "PlayPauseButton.h"
 
 @interface LiveStreamView : UIView
