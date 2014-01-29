@@ -52,7 +52,7 @@
     self.view.lblTitle.text = self.currentCase.title;
     self.view.lblSubtitle.text = [Util makeUppercaseTrackedString:self.currentCase.subtitle];
 
-    CGRect frame = CGRectMake(0, 240, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 240 - 55 - 24);
+    CGRect frame = CGRectMake(0, 240, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 240 - 50 - 24);
     self.playlistVC.view.frame = frame;
 
     [self.view addSubview:self.playlistVC.view];
@@ -65,6 +65,7 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         self.view.frame = frame;
+        [self.playlistVC.tableView reloadData];
     } completion:^(BOOL finished) {}];
 
 }
