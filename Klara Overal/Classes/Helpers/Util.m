@@ -40,4 +40,16 @@
     return acos( sin(p1Lat) * sin(p2Lat) + cos(p1Lat) * cos(p2Lat) * cos(p2Lon-p1Lon)) * 6371;
 }
 
++ (NSString *)makeUppercaseTrackedString:(NSString *)string {
+    string = [string uppercaseString];
+    
+    NSMutableArray *characters = [[NSMutableArray alloc] initWithCapacity:[string length]];
+    for (int i=0; i < [string length]; i++) {
+        NSString *ichar  = [NSString stringWithFormat:@"%c", [string characterAtIndex:i]];
+        [characters addObject:ichar];
+    }
+
+    return [characters componentsJoinedByString:@" "];
+}
+
 @end

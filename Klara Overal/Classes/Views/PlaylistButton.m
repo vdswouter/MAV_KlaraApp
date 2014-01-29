@@ -22,11 +22,8 @@
         [self setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
 
 //        self.userInteractionEnabled = YES;
-
-//        const char *c = [[text uppercaseString] UTF8String];
-        
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self setTitle:[text uppercaseString] forState:UIControlStateNormal];
+        [self setTitle:[Util makeUppercaseTrackedString:text] forState:UIControlStateNormal];
         
         [self setTitleEdgeInsets:UIEdgeInsetsMake(20.0f, 10.0f, 0.0f, 10.0f)];
         
