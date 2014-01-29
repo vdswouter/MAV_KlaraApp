@@ -78,7 +78,7 @@
 
 - (void)loadView {
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight)];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     
     self.appView = [[AppView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight * 2 - 50)];
     [self.view addSubview:self.appView];
@@ -98,6 +98,13 @@
 
     self.currentVC = (self.btnToggle.isViewToggled) ? self.playlistsVC : self.livestreamVC;
     self.currentVC.view.alpha = 1;
+    
+    if (self.btnToggle.isViewToggled) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }else{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }
+    
 }
 
 
