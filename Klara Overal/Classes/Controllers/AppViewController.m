@@ -101,10 +101,10 @@
     
     if (self.btnToggle.isViewToggled) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+        [self.livestreamVC stopStream];
     }else{
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     }
-    
 }
 
 

@@ -90,16 +90,16 @@
 - (void)toggleStream {
     if (self.isStreaming) {
         [self stopStream];
-        [self.view hideQualityPicker];
     } else {
         [self startStream];
-        [self.view showQualityPicker];
     }
 }
 
 - (void)startStream {
     self.view.btnPlayPause.isPlaying = self.isStreaming = YES;
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
+    
+    [self.view showQualityPicker];
     
     NSLog(@"Start stream - %@", [self.klaraStreamURLs objectForKey:self.currentAudioQuality]);
     
@@ -116,6 +116,7 @@
 - (void)stopStream {
     self.view.btnPlayPause.isPlaying = self.isStreaming = NO;
     [self.streamer stop];
+    [self.view hideQualityPicker];
     
     NSLog(@"Stop stream");
 }
