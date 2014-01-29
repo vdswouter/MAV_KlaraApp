@@ -17,19 +17,15 @@
         // Initialization code
         self.backgroundColor = [UIColor blackColor];
         self.titleLabel.textColor = [UIColor whiteColor];
-        [self toggleView:NO];
+        self.isViewToggled = NO;
     }
     return self;
 }
 
-- (void)toggleView:(BOOL)upState{
-    if (upState) {
-        [self setImage:[Util createImageFromPNG:@"btnNaarLivestream" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
-//        [self setImageEdgeInsets:UIEdgeInsetsMake(16, 0, 0, 0)];
-    }else{
-        [self setImage:[Util createImageFromPNG:@"btnAllePlaylists" InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
-//        [self setImageEdgeInsets:UIEdgeInsetsMake(-10, 0, 0, 0)];
-    }
+- (void)setIsViewToggled:(BOOL)isViewToggled {
+    _isViewToggled = isViewToggled;
+    NSString *imageName = isViewToggled ? @"btnNaarLivestream" : @"btnAllePlaylists";
+    [self setImage:[Util createImageFromPNG:imageName InDirectory:@"img" DoYouWantImageView:NO] forState:UIControlStateNormal];
 }
 
 /*

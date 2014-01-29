@@ -28,7 +28,5 @@
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
 
 @property (strong, nonatomic) UIViewController *currentVC;
-@property (strong, nonatomic) ProgrammaModel *huidigProgrammaData;
-
 
 @end

@@ -138,7 +138,7 @@
 
 -(void) dataAvailable
 {
-    NSLog(@"dataAvailable");
+//    NSLog(@"dataAvailable");
     
     if (fileLength < 0)
     {
@@ -226,7 +226,7 @@
     
     relativePosition += read;
     
-    NSLog(@"relative position: %lld, read: %d, position: %lld, length: %lld", relativePosition, read, self.position, self.length);
+//    NSLog(@"relative position: %lld, read: %d, position: %lld, length: %lld", relativePosition, read, self.position, self.length);
     
     return read;
 }

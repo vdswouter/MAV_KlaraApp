@@ -11,14 +11,20 @@
 
 #import "ProgrammaModel.h"
 #import "PlaylistButton.h"
+#import "QualityPicker.h"
+#import "PlayPauseButton.h"
+
 @interface LiveStreamView : UIView
 
-@property (nonatomic, strong) NSString *localFrequency;
-@property (nonatomic, strong) ProgrammaModel *programData;
-@property (nonatomic, strong) UIButton *btnPlay;
-@property (nonatomic, strong) UIButton *btnPause;
+@property (nonatomic, strong) UIImageView *imgCurrentShow;
+@property (nonatomic, strong) UILabel *lblFrequency;
+@property (nonatomic, strong) UILabel *lblPresenter;
+@property (nonatomic, strong) UILabel *lblTitle;
+@property (nonatomic, strong) UILabel *lblDescription;
+@property (nonatomic, strong) PlayPauseButton *btnPlayPause;
 
--(void)setLocalFrequency:(NSString *)localFrequency;
--(void)setProgramData:(ProgrammaModel *)programData;
+@property (nonatomic, strong) UISegmentedControl *qualityPicker;
+
+- (void)updatePresenter:(NSString *)presenter;
 
 @end

@@ -23,12 +23,19 @@
     if (self) {
         // Custom initialization
         self.currentAudioQuality = @"MID";
-        self.firstTime = YES;
-        
-        self.klaraStreamURLs = [[NSDictionary alloc] initWithObjectsAndKeys:@"http://mp3.streampower.be/klara-high.mp3",@"HIGH",@"http://mp3.streampower.be/klara-mid.mp3",@"MID",@"http://mp3.streampower.be/klara-low.mp3",@"LOW",nil];
+        self.isStreaming = NO;
 
+        self.klaraStreamURLs = @{
+            @"LOW": @"http://mp3.streampower.be/klara-low.mp3",
+            @"MID": @"http://mp3.streampower.be/klara-mid.mp3",
+            @"HIGH": @"http://mp3.streampower.be/klara-high.mp3"
+        };
+
+        // @todo - Move to AppViewController
         self.streamer = [[STKAudioPlayer alloc] init];
         
+        // @fixme - Triggers multiple times
+        // @todo  - Might need to move this to AppViewController too
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -39,18 +46,8 @@
 
 - (void)loadView {
     self.view = [[LiveStreamView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.view.btnPlay addTarget:self action:@selector(startStream:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view.btnPause addTarget:self action:@selector(stopStream:) forControlEvents:UIControlEventTouchUpInside];
-    
-    CGRect qualityPickerFrame;
-    if ([self hasFourInchDisplay]) {
-        qualityPickerFrame = CGRectMake(17, 4, 285, 34);
-    }else{
-        qualityPickerFrame = CGRectMake(17, 440, 285, 34);
-    }
-    self.qualityPicker = [[QualityPicker alloc] initWithFrame:qualityPickerFrame];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(qualityChangedHandler:) name:@"QUALITY_CHANGED" object:self.qualityPicker];
-    [self.view addSubview:self.qualityPicker];
+    [self.view.btnPlayPause addTarget:self action:@selector(toggleStream) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.qualityPicker addTarget:self action:@selector(qualityChangedHandler:) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
@@ -64,42 +61,45 @@
     
     for (NSDictionary *antenna in self.frequencies) {
         double d = [Util CalculateDistanceBetween2PointsWithP1Lat:currentLocation.coordinate.latitude P1Lon:currentLocation.coordinate.longitude P2Lat:[[antenna objectForKey:@"latitude"] doubleValue] P2Lon:[[antenna objectForKey:@"longitude"] doubleValue]];
-        
+
         if (smallestDistance == 0 || d < smallestDistance) {
             smallestDistance = d;
-            self.view.localFrequency = [antenna objectForKey:@"frequency"];
+            self.view.lblFrequency.text = [[antenna objectForKey:@"frequency"] uppercaseString];
             break;
-            NSLog(@"%@",[antenna objectForKey:@"frequency"]);
         }
     }
 }
 
--(void)qualityChangedHandler:(NSNotification *)sender{
-    [self.streamer stop];
-    self.currentAudioQuality = [[sender userInfo] objectForKey:@"quality"];
-    [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
+- (void)qualityChangedHandler:(UISegmentedControl *)qualityPicker {
+    NSArray *qualities = @[@"LOW", @"MID", @"HIGH"];
+    self.currentAudioQuality = [qualities objectAtIndex:(self.view.qualityPicker.selectedSegmentIndex - 1)];
 }
 
--(void)startStream:(id)sender{
-    self.view.btnPlay.userInteractionEnabled = NO;
-    self.view.btnPause.userInteractionEnabled = YES;
-    for (UIButton *btn in self.qualityPicker.buttons) {
-        btn.userInteractionEnabled = YES;
+- (void)setCurrentAudioQuality:(NSString *)currentAudioQuality {
+    _currentAudioQuality = currentAudioQuality;
+
+    NSLog(@"quality changed: %@", _currentAudioQuality);
+
+    if (self.isStreaming) {
+        [self.streamer stop];
+        [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
+        NSLog(@"Restarting streamer - %@", [self.klaraStreamURLs objectForKey:self.currentAudioQuality]);
     }
+}
+
+- (void)toggleStream {
+    if (self.isStreaming) {
+        [self stopStream];
+    } else {
+        [self startStream];
+    }
+}
+
+- (void)startStream {
+    self.view.btnPlayPause.isPlaying = self.isStreaming = YES;
     [self.streamer play:[self.klaraStreamURLs objectForKey:self.currentAudioQuality]];
-    [UIView animateWithDuration:0.3 animations:^{
-        if (![self hasFourInchDisplay]) {
-            self.qualityPicker.frame = CGRectMake(17, 386, 285, 34);
-            self.view.btnPlay.frame = CGRectMake(CGRectGetMinX(self.view.btnPlay.frame), CGRectGetMinY(self.view.btnPlay.frame), 90, 40);
-            self.view.btnPause.frame = CGRectMake(CGRectGetMinX(self.view.btnPause.frame), CGRectGetMinY(self.view.btnPause.frame), 90, 40);
-        }
-        if (self.firstTime) {
-            self.qualityPicker.btnMid.titleLabel.textColor = [UIColor whiteColor];
-            self.qualityPicker.btnMid.backgroundColor = [UIColor blackColor];
-            self.qualityPicker.btnMid.userInteractionEnabled = NO;
-            self.firstTime = NO;
-        }
-    }];
+    
+    NSLog(@"Start stream - %@", [self.klaraStreamURLs objectForKey:self.currentAudioQuality]);
     
     NSDictionary *streamInfo = @{
         MPMediaItemPropertyTitle: @"Klara Overal Livestream",
@@ -107,30 +107,22 @@
         MPMediaItemPropertyAlbumTitle: @"Klara Overal",
         MPMediaItemPropertyAlbumArtist: @"Klara",
     };
-    
-    NSLog(@"should set stream info");
-    
+
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
 }
 
--(void)stopStream:(id)sender{
-    self.view.btnPause.userInteractionEnabled = NO;
-    self.view.btnPlay.userInteractionEnabled = YES;
+- (void)stopStream {
+    self.view.btnPlayPause.isPlaying = self.isStreaming = NO;
     [self.streamer stop];
-    for (UIButton *btn in self.qualityPicker.buttons) {
-        btn.userInteractionEnabled = NO;
-    }
-    if (![self hasFourInchDisplay]) {
-        [UIView animateWithDuration:0.3 animations:^{
-            self.qualityPicker.frame = CGRectMake(17, 440, 285, 34);
-            self.view.btnPlay.frame = CGRectMake(CGRectGetMinX(self.view.btnPlay.frame), CGRectGetMinY(self.view.btnPlay.frame), 90, 90);
-            self.view.btnPause.frame = CGRectMake(CGRectGetMinX(self.view.btnPause.frame), CGRectGetMinY(self.view.btnPause.frame), 90, 90);
-        }];
-    }
+    
+    NSLog(@"Stop stream");
 }
 
-- (BOOL)hasFourInchDisplay {
-    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
+- (void)setCurrentShow:(ProgrammaModel *)currentShow {
+    _currentShow = currentShow;
+    
+    self.view.lblTitle.text = self.currentShow.title;
+    [self.view updatePresenter:self.currentShow.presenter];
 }
 
 - (void)viewDidLoad

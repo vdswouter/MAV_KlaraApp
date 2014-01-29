@@ -38,10 +38,10 @@
 		6CA72B351894465100FECB90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B251894465100FECB90 /* STKLocalFileDataSource.m */; };
 		6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B4018945E1C00FECB90 /* QualityPicker.m */; };
 		6CA72B43189462F500FECB90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B42189462F500FECB90 /* QuartzCore.framework */; };
-		EA02E15E18979A3C00C135C8 /* PlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E15D18979A3C00C135C8 /* PlaylistTableViewController.m */; };
-		EA02E16318979CBA00C135C8 /* PlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */; };
 		6CEF1AE81896FB77003E7902 /* frequencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CEF1AE71896FB77003E7902 /* frequencies.plist */; };
 		6CEF1AEA1896FBB4003E7902 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */; };
+		EA02E15E18979A3C00C135C8 /* PlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E15D18979A3C00C135C8 /* PlaylistTableViewController.m */; };
+		EA02E16318979CBA00C135C8 /* PlaylistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */; };
 		EA3CB8EE1897037A00707C51 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8ED1897037A00707C51 /* AppView.m */; };
 		EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F218970D9200707C51 /* CaseViewController.m */; };
 		EA3CB8F61897136400707C51 /* CaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3CB8F51897136400707C51 /* CaseView.m */; };
@@ -66,6 +66,8 @@
 		EAAC2274188AB53E008DBE33 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2273188AB53E008DBE33 /* AppViewController.m */; };
 		EAAC2277188AB551008DBE33 /* LivestreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2276188AB551008DBE33 /* LivestreamViewController.m */; };
 		EAAC227A188AB561008DBE33 /* CasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC2279188AB561008DBE33 /* CasesViewController.m */; };
+		EAFBBAF01898780D004C9058 /* QualityPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFBBAEF1898780D004C9058 /* QualityPickerButton.m */; };
+		EAFBBAF51898E201004C9058 /* PlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFBBAF41898E201004C9058 /* PlayPauseButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,12 +152,12 @@
 		6CA72B3F18945E1C00FECB90 /* QualityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPicker.h; sourceTree = "<group>"; };
 		6CA72B4018945E1C00FECB90 /* QualityPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPicker.m; sourceTree = "<group>"; };
 		6CA72B42189462F500FECB90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6CEF1AE71896FB77003E7902 /* frequencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = frequencies.plist; sourceTree = "<group>"; };
+		6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA02E15C18979A3C00C135C8 /* PlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewController.h; sourceTree = "<group>"; };
 		EA02E15D18979A3C00C135C8 /* PlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewController.m; sourceTree = "<group>"; };
 		EA02E16118979CBA00C135C8 /* PlaylistTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewCell.h; sourceTree = "<group>"; };
 		EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewCell.m; sourceTree = "<group>"; };
-		6CEF1AE71896FB77003E7902 /* frequencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = frequencies.plist; sourceTree = "<group>"; };
-		6CEF1AE91896FBB4003E7902 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA3CB8EC1897037A00707C51 /* AppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppView.h; sourceTree = "<group>"; };
 		EA3CB8ED1897037A00707C51 /* AppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppView.m; sourceTree = "<group>"; };
 		EA3CB8F118970D9200707C51 /* CaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseViewController.h; sourceTree = "<group>"; };
@@ -195,6 +197,10 @@
 		EAAC2276188AB551008DBE33 /* LivestreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivestreamViewController.m; sourceTree = "<group>"; };
 		EAAC2278188AB561008DBE33 /* CasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasesViewController.h; sourceTree = "<group>"; };
 		EAAC2279188AB561008DBE33 /* CasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasesViewController.m; sourceTree = "<group>"; };
+		EAFBBAEE1898780D004C9058 /* QualityPickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityPickerButton.h; sourceTree = "<group>"; };
+		EAFBBAEF1898780D004C9058 /* QualityPickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QualityPickerButton.m; sourceTree = "<group>"; };
+		EAFBBAF31898E201004C9058 /* PlayPauseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPauseButton.h; sourceTree = "<group>"; };
+		EAFBBAF41898E201004C9058 /* PlayPauseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPauseButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,6 +481,10 @@
 				EA3CB8F818971E6900707C51 /* CloseButton.m */,
 				EA02E16118979CBA00C135C8 /* PlaylistTableViewCell.h */,
 				EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */,
+				EAFBBAEE1898780D004C9058 /* QualityPickerButton.h */,
+				EAFBBAEF1898780D004C9058 /* QualityPickerButton.m */,
+				EAFBBAF31898E201004C9058 /* PlayPauseButton.h */,
+				EAFBBAF41898E201004C9058 /* PlayPauseButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -623,6 +633,7 @@
 				6C16EF451893DF0D0019A3C6 /* ProgrammaModel.m in Sources */,
 				6C16EF421893DC350019A3C6 /* Reachability.m in Sources */,
 				6CA72B4118945E1C00FECB90 /* QualityPicker.m in Sources */,
+				EAFBBAF01898780D004C9058 /* QualityPickerButton.m in Sources */,
 				EAAC227A188AB561008DBE33 /* CasesViewController.m in Sources */,
 				EA02E15E18979A3C00C135C8 /* PlaylistTableViewController.m in Sources */,
 				EA505EB01896E239009FFBF4 /* CaseModel.m in Sources */,
@@ -638,6 +649,7 @@
 				EA505EAD1896D33A009FFBF4 /* PlaylistItemModel.m in Sources */,
 				EA3CB8EE1897037A00707C51 /* AppView.m in Sources */,
 				6C16EF201893D93F0019A3C6 /* Util.m in Sources */,
+				EAFBBAF51898E201004C9058 /* PlayPauseButton.m in Sources */,
 				EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */,
 				6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */,
 				EA02E16318979CBA00C135C8 /* PlaylistTableViewCell.m in Sources */,

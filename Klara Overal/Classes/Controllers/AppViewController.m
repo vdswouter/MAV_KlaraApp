@@ -20,10 +20,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
-    _screenHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
 
     if (self) {
+        _screenHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
+
+        self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
+        self.playlistsVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
         
+        self.currentVC = self.livestreamVC;
+
         [self loadData];
     }
 
@@ -38,14 +43,16 @@
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         id nowNode = [[[responseObject objectForKey:@"onairs"] objectAtIndex:0] objectForKey:@"now"];
-        self.huidigProgrammaData = [[ProgrammaModel alloc] init];
+        ProgrammaModel *currentShow = [[ProgrammaModel alloc] init];
+
         if ([nowNode count] > 0) {
-            self.huidigProgrammaData.title = [nowNode objectForKey:@"title"];
-            self.huidigProgrammaData.info = [nowNode objectForKey:@"shortDescription"];
-            self.huidigProgrammaData.imgURL = [nowNode objectForKey:@"pictureUrl"];
-            self.huidigProgrammaData.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
+            currentShow.title = [nowNode objectForKey:@"title"];
+            currentShow.info = [nowNode objectForKey:@"shortDescription"];
+            currentShow.imgURL = [nowNode objectForKey:@"pictureUrl"];
+            currentShow.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
         }
-        self.livestreamVC.view.programData = self.huidigProgrammaData;
+        
+        self.livestreamVC.currentShow = currentShow;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -70,56 +77,41 @@
 }
 
 - (void)loadView {
-    self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
-    self.playlistsVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
-    
-    self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight - 50, 320, 50)];
-    [self.btnToggle addTarget:self action:@selector(btnPressedHandler:) forControlEvents:UIControlEventTouchUpInside];
-    
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight)];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     self.appView = [[AppView alloc] initWithFrame:CGRectMake(0, 0, 320, _screenHeight * 2 - 50)];
-
-    [self.appView addSubview:self.livestreamVC.view];
-    [self.appView addSubview:self.playlistsVC.view];
-    
-    [self.appView addSubview:self.btnToggle];
-    
     [self.view addSubview:self.appView];
-    
-    self.currentVC = self.livestreamVC;
 }
 
-- (void)btnPressedHandler:(id)sender{
-    NSLog(@"[AppViewController] btn pressed");
+- (void)toggleViews:(UIButton *)button {
     CGRect newFrame = self.appView.frame;
-
-    UIView *oldView = self.currentVC.view;
-    if (self.currentVC == self.livestreamVC) {
-        newFrame.origin.y = -(_screenHeight-66-6);
-        [self.btnToggle toggleView:YES];
-        [self.livestreamVC stopStream:nil];
-        self.playlistsVC.view.alpha = 1;
-        self.currentVC = self.playlistsVC;
-    }else{
-        newFrame.origin.y = 0;
-        [self.btnToggle toggleView:NO];
-        self.livestreamVC.view.alpha = 1;
-        self.currentVC = self.livestreamVC;
-    }
     
-    [UIView animateWithDuration:0.5 animations:^{
+    self.btnToggle.isViewToggled = (self.currentVC == self.livestreamVC);
+    
+    newFrame.origin.y = (self.btnToggle.isViewToggled) ? -1 * (_screenHeight - 72) : 0;
+
+    [UIView animateWithDuration:0.440f animations:^{
         self.appView.frame = newFrame;
-        oldView.alpha = 0;
+        self.currentVC.view.alpha = 0;
     }];
+
+    self.currentVC = (self.btnToggle.isViewToggled) ? self.playlistsVC : self.livestreamVC;
+    self.currentVC.view.alpha = 1;
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.btnToggle = [[ViewToggleButton alloc] initWithFrame:CGRectMake(0, _screenHeight - 50, 320, 50)];
+    [self.btnToggle addTarget:self action:@selector(toggleViews:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.appView addSubview:self.livestreamVC.view];
+    [self.appView addSubview:self.playlistsVC.view];
+    
+    [self.appView addSubview:self.btnToggle];
 }
 
 - (void)didReceiveMemoryWarning

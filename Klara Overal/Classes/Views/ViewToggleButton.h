@@ -11,6 +11,6 @@
 
 @interface ViewToggleButton : UIButton
 
+@property (nonatomic) BOOL isViewToggled;
 
--(void)toggleView:(BOOL)upState;
 @end

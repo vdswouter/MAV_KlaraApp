@@ -12,17 +12,22 @@
 #import "STKAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "ProgrammaModel.h"
 @import MediaPlayer;
 
 @interface LivestreamViewController : UIViewController<CLLocationManagerDelegate>
+
 @property (nonatomic, strong) LiveStreamView *view;
-@property (nonatomic, strong) QualityPicker *qualityPicker;
+
+@property (nonatomic, strong) NSString *currentAudioQuality;
+
 @property (nonatomic, strong) STKAudioPlayer *streamer;
 @property (nonatomic, strong) NSDictionary *klaraStreamURLs;
-@property (nonatomic, strong) NSString *currentAudioQuality;
-@property (nonatomic) BOOL firstTime;
 
--(void)stopStream:(id)sender;
+@property (nonatomic, strong) ProgrammaModel *currentShow;
+@property (nonatomic) BOOL isStreaming;
 
+- (void)startStream;
+- (void)stopStream;
 
 @end

@@ -14,64 +14,47 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        self.btnLow = [[UIButton alloc] initWithFrame:CGRectMake(1, 0, 95, 34)];
-        self.btnMid = [[UIButton alloc] initWithFrame:CGRectMake(95, 0, 95, 34)];
-        self.btnHigh = [[UIButton alloc] initWithFrame:CGRectMake(189, 0, 95, 34)];
+        self.btnLow = [[QualityPickerButton alloc] initWithQuality:0 andTitle:@"L A A G"];
+        self.btnMid = [[QualityPickerButton alloc] initWithQuality:1 andTitle:@"M E D I U M"];
+        self.btnHigh = [[QualityPickerButton alloc] initWithQuality:2 andTitle:@"H O O G"];
+        
+        self.buttons = @[self.btnLow, self.btnMid, self.btnHigh];
 
-        [self.btnLow setTitle:@"L A A G" forState:UIControlStateNormal];
-        [self.btnMid setTitle:@"M E D I U M" forState:UIControlStateNormal];
-        [self.btnHigh setTitle:@"H O O G" forState:UIControlStateNormal];
-                
-        [self.btnHigh.layer setBorderWidth:1];
-        [self.btnHigh.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
-        [self.btnMid.layer setBorderWidth:1];
-        [self.btnMid.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
-        [self.btnLow.layer setBorderWidth:1];
-        [self.btnLow.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
+        CGRect frameMid = self.btnMid.frame;
+        frameMid.origin.x = 94;
+        self.btnMid.frame = frameMid;
         
-        [self addSubview:self.btnLow];
-        [self addSubview:self.btnMid];
-        [self addSubview:self.btnHigh];
+        CGRect frameHigh = self.btnHigh.frame;
+        frameHigh.origin.x = 188;
+        self.btnHigh.frame = frameHigh;
         
-        self.buttons = [[NSArray alloc] initWithObjects:self.btnLow,self.btnMid,self.btnHigh, nil];
-        
-        for (UIButton *btn in self.buttons) {
-            [btn setTitleEdgeInsets:UIEdgeInsetsMake(5, 0, 0, 0)];
-            btn.titleLabel.font = [UIFont fontWithName:@"Calibre-Light" size:14];
-            btn.titleLabel.textColor = [UIColor blackColor];
-            btn.backgroundColor = [UIColor clearColor];
-            btn.userInteractionEnabled = NO;
-            [btn addTarget:self action:@selector(touchHandler:) forControlEvents:UIControlEventTouchUpInside];
+        for (QualityPickerButton *btn in self.buttons) {
+            [self addSubview:btn];
+            [btn addTarget:self action:@selector(changeQuality:) forControlEvents:UIControlEventTouchUpInside];
         }
     }
     return self;
 }
 
--(void)touchHandler:(id)sender{
-    [UIView animateWithDuration:0.5 animations:^{
-        for (UIButton *btn in self.buttons) {
-            if (btn == sender) {
-                btn.titleLabel.textColor = [UIColor whiteColor];
-                btn.backgroundColor = [UIColor blackColor];
-                [btn.layer setBorderColor:[[UIColor blackColor] CGColor]];
-                btn.userInteractionEnabled = false;
-            }else{
-                btn.titleLabel.textColor = [UIColor blackColor];
-                btn.backgroundColor = [UIColor clearColor];
-                [btn.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
-                btn.userInteractionEnabled = true;
-            }
-        }
-    }];
-    if (sender == self.btnHigh) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"HIGH" }];
-    }
-    if (sender == self.btnMid) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"MID" }];
-    }
-    if (sender == self.btnLow) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"LOW" }];
+- (void)changeQuality:(QualityPickerButton *)sender {
+    self.currentQuality = sender.tag;
+    
+//    if (sender == self.btnHigh) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"HIGH" }];
+//    }
+//    if (sender == self.btnMid) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"MID" }];
+//    }
+//    if (sender == self.btnLow) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUALITY_CHANGED" object:self userInfo:@{ @"quality": @"LOW" }];
+//    }
+}
+
+- (void)setCurrentQuality:(NSInteger)currentQuality {
+    _currentQuality = currentQuality;
+
+    for (QualityPickerButton *btn in self.buttons) {
+        btn.isActive = (btn.tag == currentQuality);
     }
 }
 
