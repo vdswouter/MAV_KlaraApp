@@ -44,8 +44,10 @@
 
 -(void) renderCases:(NSArray *)cases {
     uint yPos = 0;
-    uint height = 72;
+    uint height = (CGRectGetHeight(self.frame) - CGRectGetMinY(self.cases.frame) - 50 - 24) / [cases count];
 
+    NSLog(@"%f - %f", CGRectGetHeight(self.frame), CGRectGetMinY(self.cases.frame));
+    
     NSMutableArray *buttons = [NSMutableArray arrayWithCapacity:[cases count]];
 
     for (uint i = 0; i < [cases count]; i++) {

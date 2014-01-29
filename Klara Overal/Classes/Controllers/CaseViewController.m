@@ -66,7 +66,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.view.frame = frame;
         [self.playlistVC.tableView reloadData];
-    } completion:^(BOOL finished) {}];
+    }];
 
 }
 
@@ -76,7 +76,7 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         self.view.frame = frame;
-    } completion:^(BOOL finished) {}];
+    }];
     
 }
 

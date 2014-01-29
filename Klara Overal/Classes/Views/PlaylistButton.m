@@ -25,9 +25,17 @@
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setTitle:[Util makeUppercaseTrackedString:text] forState:UIControlStateNormal];
         
-        [self setTitleEdgeInsets:UIEdgeInsetsMake(20.0f, 10.0f, 0.0f, 10.0f)];
+        CGFloat yOffset = 20.0f;
+        CGFloat yOffsetCircle = 26.0f;
+
+        if (frame.size.height > 80) {
+            yOffset = 30.0f;
+            yOffsetCircle = 36.0f;
+        }
+
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(yOffset, 10.0f, 0.0f, 10.0f)];
         
-        UIView *testCircle = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) * .5 - 6, CGRectGetHeight(frame) - 26, 12, 12)];
+        UIView *testCircle = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) * .5 - 6, CGRectGetHeight(frame) - yOffsetCircle, 12, 12)];
         testCircle.backgroundColor = color;
         testCircle.layer.cornerRadius = 6.0f;
         [self addSubview:testCircle];
