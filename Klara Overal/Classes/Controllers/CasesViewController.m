@@ -50,7 +50,6 @@
 }
 
 - (void)playlistTableViewController:(PlaylistTableViewController *)playlistTableViewController changedCurrentItem:(NSInteger)index {
-    NSLog(@"casesview got selected, %li", (long)index);
     NSMutableArray *playlist = [NSMutableArray arrayWithCapacity:[self.caseVC.currentCase.playlist count]];
     
     for (uint i = (uint)index; i < [self.caseVC.currentCase.playlist count]; i++) {
@@ -63,6 +62,16 @@
         [playlist addObject:[AVPlayerItem playerItemWithURL:model.file]];
     }
     
+    PlaylistItemModel *currentPlaylistItem = (PlaylistItemModel *)[self.caseVC.currentCase.playlist objectAtIndex:index];
+    
+    NSDictionary *streamInfo = @{
+        MPMediaItemPropertyTitle: currentPlaylistItem.song,
+        MPMediaItemPropertyArtist: currentPlaylistItem.artist,
+        MPMediaItemPropertyAlbumTitle: @"Klara Overal",
+    };
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
+
     self.player = [AVQueuePlayer queuePlayerWithItems:[NSArray arrayWithArray:playlist]];
     [self.player play];
 }

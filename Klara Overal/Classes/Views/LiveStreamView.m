@@ -55,11 +55,10 @@
         self.lblPresenter.font = [UIFont fontWithName:@"Calibre-Light" size:14];
         [nuOpKlara addSubview:self.lblPresenter];
         
-        CGRect buttonFrame = CGRectMake(111, CGRectGetMinY(maskFrame) + CGRectGetHeight(maskFrame) + 10, 95, 35);
+        CGRect buttonFrame = CGRectMake(112, CGRectGetMaxY(maskFrame) + 5, 98, 90);
         
         if (!cropView) {
-            buttonFrame.origin.y += 10;
-            buttonFrame.size.height = 90;
+            buttonFrame.origin.y += 15;
         }
 
         self.btnPlayPause = [[PlayPauseButton alloc] initWithFrame:buttonFrame];
@@ -67,25 +66,36 @@
         
         uint qualityPickerMarginTop = (cropView) ? 13 : 23;
         
-        UIView *qualityPickerContainer = [[UIView alloc] initWithFrame:CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + qualityPickerMarginTop, 288, 45)];
-        qualityPickerContainer.clipsToBounds = YES;
-        qualityPickerContainer.layer.borderWidth = 1;
-        qualityPickerContainer.layer.borderColor = [[UIColor blackColor] CGColor];
+        self.qualityPickerContainer = [[UIView alloc] initWithFrame:CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + qualityPickerMarginTop, 288, 33)];
+        self.qualityPickerContainer.clipsToBounds = YES;
+        self.qualityPickerContainer.layer.borderWidth = 1;
+        self.qualityPickerContainer.layer.borderColor = [[UIColor colorWithRed:0.87f green:0.87f blue:0.87f alpha:1.0f] CGColor];
 
         self.qualityPicker = [[UISegmentedControl alloc] initWithItems:@[@"", @"L A A G", @"M E D I U M", @"H O O G", @""]];
-        [self.qualityPicker setBackgroundColor:[UIColor clearColor]];
-        self.qualityPicker.frame = CGRectMake(-11.0f, -10.0f, CGRectGetWidth(qualityPickerContainer.frame) + 25.0f, CGRectGetHeight(qualityPickerContainer.frame) + 24.0f);
+        [self.qualityPicker setBackgroundColor:[UIColor whiteColor]];
+        self.qualityPicker.frame = CGRectMake(-11.0f, -8.0f, CGRectGetWidth(self.qualityPickerContainer.frame) + 25.0f, CGRectGetHeight(self.qualityPickerContainer.frame) + 20);
         [self.qualityPicker setWidth:10.0f forSegmentAtIndex:0];
         [self.qualityPicker setWidth:10.0f forSegmentAtIndex:4];
-        [self.qualityPicker setTintColor:[UIColor blackColor]];
+        [self.qualityPicker setTintColor:[UIColor colorWithRed:0.83f green:0.83f blue:0.83f alpha:1.0f]];
         [self.qualityPicker setTitleTextAttributes:@{
-            NSFontAttributeName: [UIFont fontWithName:@"Calibre-Light" size:14]
+            NSFontAttributeName: [UIFont fontWithName:@"Calibre-Light" size:12],
+            NSForegroundColorAttributeName: [UIColor colorWithRed:0.63f green:0.63f blue:0.63f alpha:1.0f]
         } forState:UIControlStateNormal];
         
+        [self.qualityPicker setTitleTextAttributes:@{
+            NSForegroundColorAttributeName: [UIColor blackColor]
+        } forState:UIControlStateHighlighted];
+        
+        [self.qualityPicker setTitleTextAttributes:@{
+            NSForegroundColorAttributeName: [UIColor blackColor]
+        } forState:UIControlStateSelected];
+
         self.qualityPicker.selectedSegmentIndex = 2;
 
-        [qualityPickerContainer addSubview:self.qualityPicker];
-        [self addSubview:qualityPickerContainer];
+        [self.qualityPickerContainer addSubview:self.qualityPicker];
+        [self addSubview:self.qualityPickerContainer];
+        
+        [self hideQualityPicker];
     }
     return self;
 }
@@ -101,6 +111,31 @@
     [lightAttrString appendAttributedString:heavyFontAttrString];
     
     self.lblPresenter.attributedText = lightAttrString;
+}
+
+- (void)showQualityPicker {
+    if (self.frame.size.height < 568.0f) {
+        CGRect buttonFrame = self.btnPlayPause.frame;
+        buttonFrame.size.height = 35;
+        
+        [UIView animateWithDuration:0.330f animations:^(void) {
+            self.btnPlayPause.frame = buttonFrame;
+            self.qualityPickerContainer.frame = CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + 17, 288, 33);
+        }];
+    }
+}
+
+- (void)hideQualityPicker {
+    if (self.frame.size.height < 568.0f) {
+    
+        CGRect buttonFrame = self.btnPlayPause.frame;
+        buttonFrame.size.height = 90;
+    
+        [UIView animateWithDuration:0.330f animations:^(void) {
+            self.btnPlayPause.frame = buttonFrame;
+            self.qualityPickerContainer.frame = CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + 17 + 5, 288, 33);
+        }];
+    }
 }
 
 /*

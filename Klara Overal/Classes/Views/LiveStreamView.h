@@ -22,8 +22,12 @@
 @property (nonatomic, strong) UILabel *lblDescription;
 @property (nonatomic, strong) PlayPauseButton *btnPlayPause;
 
+@property (nonatomic, strong) UIView *qualityPickerContainer;
 @property (nonatomic, strong) UISegmentedControl *qualityPicker;
 
 - (void)updatePresenter:(NSString *)presenter;
+
+- (void)showQualityPicker;
+- (void)hideQualityPicker;
 
 @end

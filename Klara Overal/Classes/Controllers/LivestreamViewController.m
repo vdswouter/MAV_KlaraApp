@@ -90,8 +90,10 @@
 - (void)toggleStream {
     if (self.isStreaming) {
         [self stopStream];
+        [self.view hideQualityPicker];
     } else {
         [self startStream];
+        [self.view showQualityPicker];
     }
 }
 

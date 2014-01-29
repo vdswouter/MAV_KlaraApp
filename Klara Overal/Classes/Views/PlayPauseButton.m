@@ -15,7 +15,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
-        [self.layer setBorderColor:[[UIColor colorWithWhite:220/255.0f alpha:1] CGColor]];
+        [self.layer setBorderColor:[[UIColor colorWithRed:0.87f green:0.87f blue:0.87f alpha:1.0f]  CGColor]];
         [self.layer setBorderWidth:1];
         self.isPlaying = NO;
     }

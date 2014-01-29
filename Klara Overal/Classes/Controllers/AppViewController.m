@@ -30,10 +30,6 @@
         self.currentVC = self.livestreamVC;
 
         [self loadData];
-        
-//        NSURL *testURL = [NSURL URLWithString:@"http://student.howest.be/pieter.beulque/20132014/mav/audio/lesteryoung-therellneverbeanotheryou.mp3"];
-//        AVPlayerItem *testItem = [AVPlayerItem playerItemWithURL:testURL];
-//        self.audioPlayer = [AVPlayer playerWithPlayerItem:testItem];
     }
 
     return self;

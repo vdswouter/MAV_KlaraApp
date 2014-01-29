@@ -23,6 +23,8 @@
 
 //        self.userInteractionEnabled = YES;
 
+//        const char *c = [[text uppercaseString] UTF8String];
+        
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setTitle:[text uppercaseString] forState:UIControlStateNormal];
         

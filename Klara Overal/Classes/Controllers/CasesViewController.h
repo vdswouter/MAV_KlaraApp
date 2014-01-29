@@ -11,6 +11,7 @@
 #import "CaseViewController.h"
 #import "PlaylistTableViewController.h"
 @import AVFoundation;
+@import MediaPlayer;
 
 @interface CasesViewController : UIViewController <PlaylistTableViewControllerDelegate>
 

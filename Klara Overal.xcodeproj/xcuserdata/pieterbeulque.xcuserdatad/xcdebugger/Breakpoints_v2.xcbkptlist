@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Klara Overal/Classes/Controllers/AppViewController.m"
-            timestampString = "412678779.132208"
+            timestampString = "412686533.781303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-loadData"
             landmarkType = "5">
          </BreakpointContent>
@@ -48,6 +48,22 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "-setIsViewToggled:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Klara Overal/Classes/Views/PlaylistButton.m"
+            timestampString = "412702530.069689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-initWithFrame:text:backgroundColor:andColor:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
