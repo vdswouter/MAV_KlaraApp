@@ -33,7 +33,7 @@
         self.titleLabel.textColor = [UIColor blackColor];
         [self setTitle:title forState:UIControlStateNormal];
         [self setTitle:title forState:UIControlStateDisabled];
-        NSLog(@"%lu", self.state);
+        NSLog(@"%u", self.state);
 
         self.backgroundColor = [UIColor whiteColor];
         self.userInteractionEnabled = true;
