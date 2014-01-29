@@ -49,7 +49,7 @@
         self.lblTitle.font = [UIFont fontWithName:@"MetaSerifPro-Medi" size:25];
         [nuOpKlara addSubview:self.lblTitle];
         
-        self.lblPresenter = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMinY(self.lblTitle.frame) + 45, 220, 20)];
+        self.lblPresenter = [[UILabel alloc] initWithFrame:CGRectMake(35, CGRectGetMinY(self.lblTitle.frame) + 45, 250, 20)];
         self.lblPresenter.textColor = [UIColor colorWithWhite:100/255.0f alpha:1];
         self.lblPresenter.textAlignment = NSTextAlignmentCenter;
         self.lblPresenter.font = [UIFont fontWithName:@"Calibre-Light" size:14];
