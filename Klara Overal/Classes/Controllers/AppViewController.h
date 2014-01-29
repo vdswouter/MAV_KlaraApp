@@ -18,6 +18,7 @@
 #import "ProgrammaModel.h"
 #import "CaseModel.h"
 #import "AppView.h"
+@import AVFoundation;
 
 @interface AppViewController : UIViewController
 
@@ -28,5 +29,7 @@
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
 
 @property (strong, nonatomic) UIViewController *currentVC;
+
+@property AVPlayer *audioPlayer;
 
 @end

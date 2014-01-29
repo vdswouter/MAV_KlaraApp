@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.caseVC = [[CaseViewController alloc] initWithNibName:nil bundle:nil];
+        self.caseVC.playlistVC.delegate = self;
     }
     return self;
 }
@@ -46,6 +47,24 @@
 - (void)caseSelected:(UIButton *)btn {
     self.caseVC.currentCase = [self.cases objectAtIndex:(long) [btn tag]];
     [self.caseVC show];
+}
+
+- (void)playlistTableViewController:(PlaylistTableViewController *)playlistTableViewController changedCurrentItem:(NSInteger)index {
+    NSLog(@"casesview got selected, %li", (long)index);
+    NSMutableArray *playlist = [NSMutableArray arrayWithCapacity:[self.caseVC.currentCase.playlist count]];
+    
+    for (uint i = (uint)index; i < [self.caseVC.currentCase.playlist count]; i++) {
+        PlaylistItemModel *model = (PlaylistItemModel *)[self.caseVC.currentCase.playlist objectAtIndex:i];
+        [playlist addObject:[AVPlayerItem playerItemWithURL:model.file]];
+    }
+    
+    for (uint j = 0; j < index; j++) {
+        PlaylistItemModel *model = (PlaylistItemModel *)[self.caseVC.currentCase.playlist objectAtIndex:j];
+        [playlist addObject:[AVPlayerItem playerItemWithURL:model.file]];
+    }
+    
+    self.player = [AVQueuePlayer queuePlayerWithItems:[NSArray arrayWithArray:playlist]];
+    [self.player play];
 }
 
 - (void)viewDidLoad

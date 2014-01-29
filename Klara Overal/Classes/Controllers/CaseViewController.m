@@ -18,7 +18,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"wueheu");
         self.playlistVC = [[PlaylistTableViewController alloc] initWithStyle:UITableViewStylePlain];
     }
     return self;
@@ -78,18 +77,6 @@
         self.view.frame = frame;
     } completion:^(BOOL finished) {}];
     
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

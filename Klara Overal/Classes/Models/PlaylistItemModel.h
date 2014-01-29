@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *song;
 @property (nonatomic, strong) NSString *artist;
 @property uint duration;
+@property (nonatomic, strong) NSURL *file;
 
 +(PlaylistItemModel *) createFromJSON:(NSDictionary *)json;
 

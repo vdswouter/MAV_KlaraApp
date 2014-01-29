@@ -15,7 +15,8 @@
     
     playlistItemModel.song = [json objectForKey:@"song"];
     playlistItemModel.artist = [json objectForKey:@"artist"];
-    
+    playlistItemModel.file = [NSURL URLWithString:[@"http://student.howest.be/pieter.beulque/20132014/mav/audio/" stringByAppendingString:[[json objectForKey:@"full"] objectForKey:@"mp3"]]];
+
     return playlistItemModel;
 }
 

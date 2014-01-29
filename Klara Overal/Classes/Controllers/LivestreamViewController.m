@@ -50,7 +50,7 @@
     [self.view.qualityPicker addTarget:self action:@selector(qualityChangedHandler:) forControlEvents:UIControlEventValueChanged];
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     [self.locationManager stopUpdatingLocation];
 
     double smallestDistance = 0;

@@ -10,8 +10,17 @@
 #import "PlaylistItemModel.h"
 #import "PlaylistTableViewCell.h"
 
+@class PlaylistTableViewController;
+
+@protocol PlaylistTableViewControllerDelegate <NSObject>
+
+- (void)playlistTableViewController:(PlaylistTableViewController *)playlistTableViewController changedCurrentItem:(NSInteger)index;
+
+@end
+
 @interface PlaylistTableViewController : UITableViewController
 
+@property (weak, nonatomic) id<PlaylistTableViewControllerDelegate> delegate;
 @property (strong, nonatomic) NSArray *playlistItems;
 
 @end

@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CasesView.h"
 #import "CaseViewController.h"
+#import "PlaylistTableViewController.h"
+@import AVFoundation;
 
-@interface CasesViewController : UIViewController
+@interface CasesViewController : UIViewController <PlaylistTableViewControllerDelegate>
 
 @property (nonatomic, strong) CasesView *view;
 @property (nonatomic, strong) NSArray *cases;
+
+@property (nonatomic, strong) AVQueuePlayer *player;
 
 @property (nonatomic, strong) CaseViewController *caseVC;
 
