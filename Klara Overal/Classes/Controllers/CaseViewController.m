@@ -50,7 +50,7 @@
     self.view.backgroundColor = self.currentCase.color;
     [self.view.imgIcon setImage:[Util createImageFromPNG:self.currentCase.cleanTitle InDirectory:@"img" DoYouWantImageView:NO]];
     self.view.lblTitle.text = self.currentCase.title;
-    self.view.lblSubtitle.text = [self.currentCase.subtitle uppercaseString];
+    self.view.lblSubtitle.text = [Util makeUppercaseTrackedString:self.currentCase.subtitle];
 
     CGRect frame = CGRectMake(0, 240, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 240 - 55 - 24);
     self.playlistVC.view.frame = frame;
