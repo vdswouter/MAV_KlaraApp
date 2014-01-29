@@ -108,6 +108,31 @@
     }
 }
 
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event{
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+                
+            case UIEventSubtypeRemoteControlPause:
+                if (self.btnToggle.isViewToggled) {
+                    [self.casesVC stopAudio];
+                }else{
+                    [self.livestreamVC stopStream];
+                }
+                break;
+                
+            case UIEventSubtypeRemoteControlPlay:
+                if (self.btnToggle.isViewToggled) {
+                    [self.casesVC startAudio];
+                }else{
+                    [self.livestreamVC startStream];
+                }
+                break;
+                
+            default: break;
+        }
+    }
+}
+
 
 - (void)viewDidLoad
 {

@@ -102,12 +102,15 @@
     [self.view showQualityPicker];
     
     NSLog(@"Start stream - %@", [self.klaraStreamURLs objectForKey:self.currentAudioQuality]);
+
+    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:[Util createImageFromPNG:@"album-cover-white" InDirectory:@"img" DoYouWantImageView:NO]];
     
     NSDictionary *streamInfo = @{
         MPMediaItemPropertyTitle: @"Klara Overal Livestream",
         MPMediaItemPropertyArtist: @"Klara",
         MPMediaItemPropertyAlbumTitle: @"Klara Overal",
         MPMediaItemPropertyAlbumArtist: @"Klara",
+        MPMediaItemPropertyArtwork: artwork
     };
 
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
@@ -126,6 +129,9 @@
     
     self.view.lblTitle.text = self.currentShow.title;
     [self.view updatePresenter:self.currentShow.presenter];
+    //TODO: GEEN FALLBACK VOORZIEN+ IMAGE NOG MOOI STYLEN BINNEN HET CIRKELTJE. MAAR API STUURT NIET ALTIJD EEN IMAGE MEE... OM NU TE TESTEN... 
+    self.view.imgCurrentShow.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.currentShow.imgURL]]];
+
 }
 
 - (void)viewDidLoad

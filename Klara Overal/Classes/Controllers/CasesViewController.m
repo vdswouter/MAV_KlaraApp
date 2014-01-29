@@ -64,10 +64,14 @@
     
     PlaylistItemModel *currentPlaylistItem = (PlaylistItemModel *)[self.caseVC.currentCase.playlist objectAtIndex:index];
     
+    NSString *imgName = [[NSString alloc] initWithFormat:@"album-cover-%@",self.caseVC.currentCase.cleanTitle ];
+    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:[Util createImageFromPNG:imgName InDirectory:@"img" DoYouWantImageView:NO]];
+    
     NSDictionary *streamInfo = @{
         MPMediaItemPropertyTitle: currentPlaylistItem.song,
         MPMediaItemPropertyArtist: currentPlaylistItem.artist,
         MPMediaItemPropertyAlbumTitle: @"Klara Overal",
+        MPMediaItemPropertyArtwork: artwork
     };
     
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:streamInfo];
@@ -78,6 +82,10 @@
 
 -(void)stopAudio{
     [self.player pause];
+}
+
+-(void)startAudio{
+    [self.player play];
 }
 
 - (void)viewDidLoad

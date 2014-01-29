@@ -23,5 +23,6 @@
 @property (nonatomic, strong) CaseViewController *caseVC;
 
 -(void)stopAudio;
+-(void)startAudio;
 
 @end
