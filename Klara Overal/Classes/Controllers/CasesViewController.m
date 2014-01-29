@@ -76,6 +76,10 @@
     [self.player play];
 }
 
+-(void)stopAudio{
+    [self.player pause];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

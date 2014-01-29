@@ -25,7 +25,7 @@
         _screenHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
 
         self.livestreamVC = [[LivestreamViewController alloc] initWithNibName:nil bundle:nil];
-        self.playlistsVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
+        self.casesVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
         
         self.currentVC = self.livestreamVC;
 
@@ -69,7 +69,7 @@
             [cases addObject:[CaseModel createFromJSON:[jsonCases objectAtIndex:i]]];
         }
         
-        self.playlistsVC.cases = [NSArray arrayWithArray:cases];
+        self.casesVC.cases = [NSArray arrayWithArray:cases];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
@@ -96,7 +96,7 @@
         self.currentVC.view.alpha = 0;
     }];
 
-    self.currentVC = (self.btnToggle.isViewToggled) ? self.playlistsVC : self.livestreamVC;
+    self.currentVC = (self.btnToggle.isViewToggled) ? self.casesVC : self.livestreamVC;
     self.currentVC.view.alpha = 1;
     
     if (self.btnToggle.isViewToggled) {
@@ -104,6 +104,7 @@
         [self.livestreamVC stopStream];
     }else{
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        [self.casesVC stopAudio];
     }
 }
 
@@ -116,7 +117,7 @@
     [self.btnToggle addTarget:self action:@selector(toggleViews:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.appView addSubview:self.livestreamVC.view];
-    [self.appView addSubview:self.playlistsVC.view];
+    [self.appView addSubview:self.casesVC.view];
     
     [self.appView addSubview:self.btnToggle];
 }

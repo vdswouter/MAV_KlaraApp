@@ -25,7 +25,7 @@
 @property (strong, nonatomic) AppView *appView;
 
 @property (strong, nonatomic) LivestreamViewController *livestreamVC;
-@property (strong, nonatomic) CasesViewController *playlistsVC;
+@property (strong, nonatomic) CasesViewController *casesVC;
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
 
 @property (strong, nonatomic) UIViewController *currentVC;
