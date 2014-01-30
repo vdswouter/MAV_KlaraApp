@@ -12,7 +12,7 @@
 
 -(id)init{
     self.title = @"Geen programma";
-    self.imgURL = nil;
+    self.imgURL = @"";
     self.presenter = @"niemand";
     self.info = @" ";
     

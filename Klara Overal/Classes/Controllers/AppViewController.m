@@ -49,6 +49,7 @@
             currentShow.title = [nowNode objectForKey:@"title"];
             currentShow.info = [nowNode objectForKey:@"shortDescription"];
             currentShow.imgURL = [nowNode objectForKey:@"pictureUrl"];
+//            currentShow.imgURL = @"http://radio.klara.be/radio/images/pres_fotos/LAE.jpg";
             currentShow.presenter = [[[nowNode objectForKey:@"presenters"] objectAtIndex:0] objectForKey:@"name"];
         }
         

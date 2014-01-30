@@ -30,11 +30,12 @@
         [frequencyInfo addSubview:self.lblFrequency];
         [self addSubview:frequencyInfo];
         
-        self.imgCurrentShow = [Util createImageFromPNG:@"klara-icon" InDirectory:@"img" DoYouWantImageView:YES];
+        self.imgCurrentShow = [Util createImageFromPNG:@"klara-icon-paused" InDirectory:@"img" DoYouWantImageView:YES];
         self.imgCurrentShow.contentMode = UIViewContentModeCenter;
         self.imgCurrentShow.frame = CGRectMake(105, CGRectGetMaxY(frequencyInfo.frame) + 37, 110, 110);
         self.imgCurrentShow.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.imgCurrentShow];
+        self.presenterImage = NO;
         
         // The info background is on top of the image so it acts as a circular mask
         UIImageView *nuOpKlara = [Util createImageFromPNG:@"nuOpKlara" InDirectory:@"img" DoYouWantImageView:YES];
@@ -123,6 +124,11 @@
             self.qualityPickerContainer.frame = CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + 17, 288, 33);
         }];
     }
+    if (!self.presenterImage) {
+        [UIView transitionWithView:self.imgCurrentShow duration:0.440f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.imgCurrentShow.image = [Util createImageFromPNG:@"klara-icon" InDirectory:@"img" DoYouWantImageView:NO];
+        } completion:nil];
+    }
 }
 
 - (void)hideQualityPicker {
@@ -135,6 +141,11 @@
             self.btnPlayPause.frame = buttonFrame;
             self.qualityPickerContainer.frame = CGRectMake(16, CGRectGetMaxY(self.btnPlayPause.frame) + 17 + 5, 288, 33);
         }];
+    }
+    if (!self.presenterImage) {
+        [UIView transitionWithView:self.imgCurrentShow duration:0.440f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.imgCurrentShow.image = [Util createImageFromPNG:@"klara-icon-paused" InDirectory:@"img" DoYouWantImageView:NO];
+        } completion:nil];
     }
 }
 

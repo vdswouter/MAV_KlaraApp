@@ -129,8 +129,20 @@
     
     self.view.lblTitle.text = self.currentShow.title;
     [self.view updatePresenter:self.currentShow.presenter];
-    //TODO: GEEN FALLBACK VOORZIEN+ IMAGE NOG MOOI STYLEN BINNEN HET CIRKELTJE. MAAR API STUURT NIET ALTIJD EEN IMAGE MEE... OM NU TE TESTEN... 
-    self.view.imgCurrentShow.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.currentShow.imgURL]]];
+
+    if ([self.currentShow.imgURL length] > 0) {
+        NSMutableArray *urlPieces = [NSMutableArray arrayWithArray:[self.currentShow.imgURL componentsSeparatedByString:@"/"]];
+        [urlPieces setObject:[NSString stringWithFormat:@"10_%@",[urlPieces lastObject]] atIndexedSubscript:[urlPieces count]-1];
+        self.currentShow.imgURL = [urlPieces componentsJoinedByString:@"/"];
+        NSLog(@"the image URL = %@",self.currentShow.imgURL);
+        
+        UIImage *presenterImg = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.currentShow.imgURL]]];
+        if (presenterImg.size.width > 70) {
+            self.view.imgCurrentShow.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.currentShow.imgURL]]];
+            self.view.imgCurrentShow.contentMode = UIViewContentModeScaleAspectFill;
+            self.view.presenterImage = YES;
+        }
+    }
 
 }
 

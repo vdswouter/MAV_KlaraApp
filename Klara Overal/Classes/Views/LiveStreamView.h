@@ -16,6 +16,7 @@
 @interface LiveStreamView : UIView
 
 @property (nonatomic, strong) UIImageView *imgCurrentShow;
+@property (nonatomic) BOOL presenterImage;
 @property (nonatomic, strong) UILabel *lblFrequency;
 @property (nonatomic, strong) UILabel *lblPresenter;
 @property (nonatomic, strong) UILabel *lblTitle;
