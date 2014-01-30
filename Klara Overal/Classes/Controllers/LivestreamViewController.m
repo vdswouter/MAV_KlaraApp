@@ -31,11 +31,8 @@
             @"HIGH": @"http://mp3.streampower.be/klara-high.mp3"
         };
 
-        // @todo - Move to AppViewController
         self.streamer = [[STKAudioPlayer alloc] init];
         
-        // @fixme - Triggers multiple times
-        // @todo  - Might need to move this to AppViewController too
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -65,7 +62,6 @@
         if (smallestDistance == 0 || d < smallestDistance) {
             smallestDistance = d;
             self.view.lblFrequency.text = [[antenna objectForKey:@"frequency"] uppercaseString];
-            break;
         }
     }
 }
