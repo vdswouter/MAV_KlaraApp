@@ -28,6 +28,7 @@
 		6C16EF4C189405160019A3C6 /* Calibre-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF48189405160019A3C6 /* Calibre-Light.otf */; };
 		6C16EF4D189405160019A3C6 /* MetaSerifPro-Medi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */; };
 		6C16EF5618940D220019A3C6 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 6C16EF5518940D220019A3C6 /* img */; };
+		6C47F916189A014900C36BD6 /* NoInternetOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C47F915189A014900C36BD6 /* NoInternetOverlayView.m */; };
 		6CA72B151894353000FECB90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA72B141894353000FECB90 /* AVFoundation.framework */; };
 		6CA72B2F1894465100FECB90 /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B191894465100FECB90 /* STKAudioPlayer.m */; };
 		6CA72B301894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA72B1B1894465100FECB90 /* STKAutoRecoveringHTTPDataSource.m */; };
@@ -130,6 +131,8 @@
 		6C16EF48189405160019A3C6 /* Calibre-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Calibre-Light.otf"; path = "../Calibre-Light.otf"; sourceTree = "<group>"; };
 		6C16EF49189405160019A3C6 /* MetaSerifPro-Medi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MetaSerifPro-Medi.otf"; path = "../MetaSerifPro-Medi.otf"; sourceTree = "<group>"; };
 		6C16EF5518940D220019A3C6 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		6C47F914189A014900C36BD6 /* NoInternetOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInternetOverlayView.h; sourceTree = "<group>"; };
+		6C47F915189A014900C36BD6 /* NoInternetOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInternetOverlayView.m; sourceTree = "<group>"; };
 		6CA72B141894353000FECB90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6CA72B181894465100FECB90 /* STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAudioPlayer.h; sourceTree = "<group>"; };
 		6CA72B191894465100FECB90 /* STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAudioPlayer.m; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				EA02E16218979CBA00C135C8 /* PlaylistTableViewCell.m */,
 				EAFBBAF31898E201004C9058 /* PlayPauseButton.h */,
 				EAFBBAF41898E201004C9058 /* PlayPauseButton.m */,
+				6C47F914189A014900C36BD6 /* NoInternetOverlayView.h */,
+				6C47F915189A014900C36BD6 /* NoInternetOverlayView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -637,6 +642,7 @@
 				EA505EAD1896D33A009FFBF4 /* PlaylistItemModel.m in Sources */,
 				EA3CB8EE1897037A00707C51 /* AppView.m in Sources */,
 				6C16EF201893D93F0019A3C6 /* Util.m in Sources */,
+				6C47F916189A014900C36BD6 /* NoInternetOverlayView.m in Sources */,
 				EAFBBAF51898E201004C9058 /* PlayPauseButton.m in Sources */,
 				EA3CB8F318970D9200707C51 /* CaseViewController.m in Sources */,
 				6CA72B311894465100FECB90 /* STKCoreFoundationDataSource.m in Sources */,

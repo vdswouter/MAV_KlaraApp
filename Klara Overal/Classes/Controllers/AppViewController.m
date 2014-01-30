@@ -28,8 +28,6 @@
         self.casesVC = [[CasesViewController alloc] initWithNibName:nil bundle:nil];
         
         self.currentVC = self.livestreamVC;
-
-        [self loadData];
     }
 
     return self;
@@ -134,6 +132,18 @@
     }
 }
 
+-(void)recheckConnection:(id)sender{
+    if ([Util networkConnectionAvailable]) {
+        [self loadData];
+        [UIView animateWithDuration:0.440f animations:^{
+            self.overlay.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.overlay removeFromSuperview];
+            self.overlay = nil;
+        }];
+    }
+}
+
 
 - (void)viewDidLoad
 {
@@ -146,6 +156,14 @@
     [self.appView addSubview:self.casesVC.view];
     
     [self.appView addSubview:self.btnToggle];
+    
+    if ([Util networkConnectionAvailable]) {
+        [self loadData];
+    }else{
+        self.overlay = [[NoInternetOverlayView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        [self.overlay addTarget:self action:@selector(recheckConnection:) forControlEvents:UIControlEventTouchUpInside];
+        [self.appView addSubview:self.overlay];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -18,6 +18,7 @@
 #import "ProgrammaModel.h"
 #import "CaseModel.h"
 #import "AppView.h"
+#import "NoInternetOverlayView.h"
 @import AVFoundation;
 
 @interface AppViewController : UIViewController
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) LivestreamViewController *livestreamVC;
 @property (strong, nonatomic) CasesViewController *casesVC;
 @property (strong, nonatomic) ViewToggleButton *btnToggle;
+@property (strong,nonatomic) NoInternetOverlayView *overlay;
 
 @property (strong, nonatomic) UIViewController *currentVC;
 

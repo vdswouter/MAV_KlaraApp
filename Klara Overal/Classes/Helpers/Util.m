@@ -15,8 +15,8 @@
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         NSLog(@"There IS NO internet connection");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netwerk probleem" message:@"Er is geen werkende internetverbinding aanwezig. Zet 3G aan of verbind met een WIFI netwerk." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Netwerk probleem" message:@"Er is geen werkende internetverbinding aanwezig. Zet 3G aan of verbind met een WIFI netwerk." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
         return NO;
     } else {
         NSLog(@"There IS internet connection");
